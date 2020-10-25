@@ -1,4 +1,6 @@
 # co2-ampel
+![CO2-Ampel][co2ampel]
+
 ## Motivation
 Um das Raumklima und potentielle Virenlasten in geschlossenen Räumen zu überwachen, kann der CO2-Gehalt der Raumluft benutzt werden. In freier Natur und frisch gelüfteten Räumen beträgt er ~400ppm (0,04%), in geschlossenen Räumen mit anwesenden Personen steigt er konstant an. Ab ~1500ppm ist das Raumklima schlecht, Unbehaglichkeit, Müdigkeit und Konzentrationsschwächen können auftreten. 
 Da potentielle Viren, die als Aerosol übertragen werden, zusammen mit dem CO2 in den Raum gebracht werden, kann der Gehalt vielleicht auch als Indikator für das Ansteckungsrisiko dienen.
@@ -23,3 +25,5 @@ Das Projekt wurde in Autodesk Fusion 360 entworfen, alle .f3d-Dateien können do
 
 ## Zusätzliche Ressourcen
   * https://wiki.fablab-karlsruhe.de/doku.php?id=projekte:2020:co2-ampel
+
+[co2ampel]: images/co2ampel.jpg "CO2-Ampel"
