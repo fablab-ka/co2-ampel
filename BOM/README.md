@@ -26,7 +26,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 |18|[Case/OpenSCAD/case.stl](Case)|1|Gehäuse|PLA 0.2mm|3D-Druck||||
 |19|[Case/OpenSCAD/lid.stl](Lid)|1|Deckel|PLA 0.2mm|3D-Druck||||
 |20|Diffusor|2|Diffusor|3mm Akryl opal / PETG transparent|Lasercutter/3D-Druck||||
-|21|[Case/SilhouetteStudio/smiley.svg](Smiley)|1|Smiley|Vinyl Folie|Plotter/ausschneiden||||
+|21|[../Case/SilhouetteStudio/smiley.svg](Smiley)|1|Smiley|Vinyl Folie|Plotter/ausschneiden||||
 |22|Netzteil|1|USB-Netzteil 5V/1A|Netzteil|diverse Hersteller||||
 |23|USB-B-Kabel|1|USB-A Stekcer auf USB-B Buchse|USB-B-Kabel|diverse Hersteller||||
 
