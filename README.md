@@ -17,11 +17,12 @@ Um den CO2-Gehalt zu überwachen, können CO2-Sensoren verwendet werden. Viele v
   * Lötkolben
   * optional: Reflow Ofen (falls das PCB selbst bestückt werden soll)
   * optional: Lasercutter (falls der Diffusor aus Acryl gelasert statt gedruckt werden soll)
+  * optional: Plotter für die Vinyl-Folie (Augen, Mund)
 
 ## Anleitung zum Nachbau
 Da das Projekt noch im Prototypen-Statium ist, gibt es leider noch wenig Dokumentation. Folgende Schritte müssen zum Nachbau unternommen werden:
   * Bestellen der Platine mit den Gerber-Dateien in PCB/Gerber bei einem PCB-Haus. Zu empfehlen ist auch der Kauf eines Stencils.
-  * Bestellen der Bauteile, Warenkörbe sind in [BOM](PCB/BOM/) zu finden.
+  * Bestellen der Bauteile, Warenkörbe sind in [BOM](BOM/) zu finden.
   * Bestücken der PCBs
   * Upload des Sourcecodes
   * 3D-Druck des Gehäuses
