@@ -15,7 +15,7 @@ Um den CO2-Gehalt zu überwachen, können CO2-Sensoren verwendet werden. Viele v
 ## Benötigtes Werkzeug
   * 3D Drucker
   * Lötkolben
-  * optionnal: Reflow Ofen (falls das PCB selbst bestückt werden soll)
+  * optional: Reflow Ofen (falls das PCB selbst bestückt werden soll)
   * optional: Lasercutter (falls der Diffusor aus Acryl gelasert statt gedruckt werden soll)
 
 ## Anleitung zum Nachbau
