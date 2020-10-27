@@ -24,7 +24,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 |16|28983931346|1|D1|[d1][d1] |AZDelivery|Through Hole|||
 |17|PCB-V2|1|PCB||jlcpcb||||
 |18|[Case](../Case/OpenSCAD/case.stl)|1|Gehäuse|PLA 0.2mm|3D-Druck||||
-|19|[Lid](Case/OpenSCAD/lid.stl)|1|Deckel|PLA 0.2mm|3D-Druck||||
+|19|[Lid](../Case/OpenSCAD/lid.stl)|1|Deckel|PLA 0.2mm|3D-Druck||||
 |20|Diffusor|2|Diffusor|3mm Akryl opal / PETG transparent|Lasercutter/3D-Druck||||
 |21|[Smiley](../Case/SilhouetteStudio/smiley.svg)|1|Smiley|Vinyl Folie|Plotter/ausschneiden||||
 |22|Netzteil|1|USB-Netzteil 5V/1A|Netzteil|diverse Hersteller||||
