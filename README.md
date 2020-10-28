@@ -1,34 +1,53 @@
-# co2-ampel
+# CO2-Ampel V2
 ![CO2-Ampel][co2ampel]
 
-## Motivation
-Um das Raumklima und potentielle Virenlasten in geschlossenen Räumen zu überwachen, kann der CO2-Gehalt der Raumluft benutzt werden. In freier Natur und frisch gelüfteten Räumen beträgt er ~400ppm (0,04%), in geschlossenen Räumen mit anwesenden Personen steigt er konstant an. Ab ~1500ppm ist das Raumklima schlecht, Unbehaglichkeit, Müdigkeit und Konzentrationsschwächen können auftreten. 
-Da potentielle Viren, die als Aerosol übertragen werden, zusammen mit dem CO2 in den Raum gebracht werden, kann der Gehalt vielleicht auch als Indikator für das Ansteckungsrisiko dienen.
+## Einleitung
+Der CO2-Gehalt der Luft kann als Indikator benutzt werden, um das Raumklima zu überwachen und eine potentielle Virenlast in geschlossenen Räumen zu erkennen. In freier Natur und in frisch gelüfteten Räumen beträgt er ungefähr 400ppm (0,04%). In geschlossenen Räumen mit anwesenden Personen steigt er konstant an. Ab ca. 1500ppm wird das Raumklima schlecht, und es können Unbehaglichkeit, Müdigkeit und Konzentrationsschwächen auftreten. 
 
-Um den CO2-Gehalt zu überwachen, können CO2-Sensoren verwendet werden. Viele vorhandenen Geräten können zwar den CO2-Gehalt akkurat messen, aber zeigen die Auswirkungen auf die Raumluft nur mit kleinen LED-Anzeigen oder garnicht an. Deshalb soll diese CO2-Ampel folgende Features aufweisen:
-  * Genaue Messung des CO2-Gehalts
-  * großflächige visuelle Anzeige des Raumklimas
-  * optionale akkustische Warnung bei schlechtem Klima
-  * plug-and-play standalone-Lösung
-  * einfache Installation und Benutzung
+Da Viren, die als Aerosol übertragen werden, zusammen mit dem CO2 in den Raum gebracht werden, kann über den CO2-Gehalt der Raumluft als Indikator für das Ansteckungsrisiko dienen.
 
-## Benötigtes Werkzeug
-  * 3D Drucker
-  * Lötkolben
-  * optional: Reflow Ofen (falls das PCB selbst bestückt werden soll)
-  * optional: Lasercutter (falls der Diffusor aus Acryl gelasert statt gedruckt werden soll)
-  * optional: Plotter für die Vinyl-Folie (Augen, Mund)
+Mithilfe von CO2-Sensoren lässt sich der CO2-Gehalt der Raumluft überwachen. Viele vorhandenen Geräte erlauben zwar eine akkurate Messung, zeigen aber die Auswirkungen auf die Raumluft nur mit kleinen LED-Anzeigen oder überhaupt nicht an. Sie eignenen sich daher nur bedingt für den Einsatz in Gruppenräumen.
 
-## Anleitung zum Nachbau
-Da das Projekt noch im Prototypen-Statium ist, gibt es leider noch wenig Dokumentation. Folgende Schritte müssen zum Nachbau unternommen werden:
-  * Bestellen der Platine mit den Gerber-Dateien in PCB/Gerber bei einem PCB-Haus. Zu empfehlen ist auch der Kauf eines Stencils.
-  * Bestellen der Bauteile, Warenkörbe sind in [BOM](BOM/) zu finden.
-  * Bestücken der PCBs
-  * Upload des Sourcecodes
-  * 3D-Druck des Gehäuses
+## Zielsetzung
+Die *CO2-Ampel V2* wurde speziell für Schulen und Kitas entwickelt. Sie zeigt das Raumklima spielerisch und gut sichtbar im Stil einer Verkehrsampel an. *Grün* bedeutet *alles in Ordnung*. Springt die Ampel auf *gelb*, wird es Zeit, die Fenster zu öffnen. Bei *rot* ist der Grenzwert überschritten. Ein akkustisches Signal weißt zusätzlich darauf hin, dass nunmehr umgehend gelüften werden muss. Sobald der CO2-Gehalt sich normalisiert hat, springt die Ampel wieder auf *grün*. Ein lachender bzw. ein trauriger Smiliey illustrieren das Messergebnis zusätzlich.
 
-## Anleitung zur Weiterentwicklung
-Das Projekt wurde in Autodesk Fusion 360 entworfen, alle .f3d-Dateien können dort importiert werden.
+Das Gerät lässt sich leicht installieren und wird über ein gewöhnliches USB-Kabel mit Strom versorgt. Der eingebaute Sensor erlaubt präzise CO2-Messungen. Auf Wunsch lässt sich der Verlauf der Messwerte per WLAN in einem Web-Interface anzeigen und protokollieren.
+
+Bei der CO2-Ampel V2 handelt es sich um ein gemeinsames Projekt des [FabLab Karlsruhe e.V.](https://fablab-karlsruhe.de) und des [FabLab Bruchsal e.V.](http://fablab-bruchsal.de) im Rahmen der Aktion [Corona-Hilfe Karlsruhe](https://coronahilfe-karlsruhe.de).
+
+## Inbetriebnahme und Fehlerbehebung
+Die [Bedienungsanleitung](Documentation/Deutsch/Bedienungsanleitung.md) der CO2-Ampel V2 erläutert alle erforderlichen Schritte zur Inbetriebnahme und zur Nutzung einer fertigen CO2-Ampel. Sie deckt die folgenden Aspekte ab:
+
+* Installation und Stromversorgung
+* Nutzung des Geräts im Alltag
+* Konfiguration der WLAN-Verbindung (optional)
+* Zugriff auf die Messdaten und Protokolle (optional)
+* Fehlerbehebung
+* Entsorgung
+
+## Aufbauanleitung (Bausatz)
+Die bebilderte [Aufbauanleitung](Documentation/Deutsch/Aufbauanleitung.md) erklärt Schritt für Schritt, wie die CO2-Ampel aus den Einzelkomponenten zusammengesetz wird. Dies umfasst die folgenden Schritte:
+
+* Einlöten der fehlenden elektronischen Komponenten
+* Zusammenstecken und Verschrauben des Geräts
+* Test und Fehlerbehebung
+
+## Beschaffung bzw. Herstellung der Komponenten
+Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt einen Überblick, wie die Einzelkomponenten der CO2-Ampel basierend auf den Informationen in diesem GitHub-Repository hergestellt bzw. beschafft werden können. Die Anleitung umfasst die folgenden Abschnitte:
+
+* Beschaffung der Bauteile
+* Bestellung der Platine bei einem PCB-Haus
+* Bestückung der Platine mit den SMD-Komponenten
+* Kompilieren und Hochladen der Software
+* Einrichtung des Webinterfaces für den Datenzugriff
+* 3D-Druck des Gehäuses
+
+## Weiterentwicklung des Projekts
+Der gesamte Quellcode der CO2-Ampel V2 wurde in diesem  GitHub-Repository veröffentlicht. Er besteht aus den folgenden Komponenten:
+
+* Platine ([Gerber](https://de.wikipedia.org/wiki/Gerber-Format))
+* Software (c++)
+* Gehäuse (Wahlweise [Autodesk Fusion 360](https://www.autodesk.de/products/fusion-360/overview) oder [OpenSCAD](https://www.openscad.org))
 
 ## Zusätzliche Ressourcen
   * https://wiki.fablab-karlsruhe.de/doku.php?id=projekte:2020:co2-ampel
