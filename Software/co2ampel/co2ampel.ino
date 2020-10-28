@@ -30,7 +30,7 @@
 SCD30 airSensor;
 
 
-uint16_t green_th=700;
+uint16_t green_th=800;
 uint16_t yellow_thL=1000;
 uint16_t yellow_thH=1200;
 uint16_t red_th=1500;
