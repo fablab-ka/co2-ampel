@@ -13,7 +13,7 @@ Die *CO2-Ampel V2* wurde speziell für Schulen und Kitas entwickelt. Sie zeigt d
 
 Das Gerät lässt sich leicht installieren und wird über ein gewöhnliches USB-Kabel mit Strom versorgt. Der eingebaute Sensor erlaubt präzise CO2-Messungen. Auf Wunsch lässt sich der Verlauf der Messwerte per WLAN in einem Web-Interface anzeigen und protokollieren.
 
-Bei der CO2-Ampel V2 handelt es sich um ein gemeinsames Projekt des [FabLab Karlsruhe e.V.](https://fablab-karlsruhe.de) und des [FabLab Bruchsal e.V.](http://fablab-bruchsal.de) im Rahmen des Projekts [Corona-Hilfe Karlsruhe](https://coronahilfe-karlsruhe.de).
+Bei der CO2-Ampel V2 handelt es sich um ein gemeinsames Projekt des [FabLab Karlsruhe e.V.](https://fablab-karlsruhe.de) und des [FabLab Bruchsal e.V.](http://fablab-bruchsal.de) im Rahmen der Aktion [Corona-Hilfe Karlsruhe](https://coronahilfe-karlsruhe.de).
 
 ## Inbetriebnahme und Fehlerbehebung
 Die [Bedienungsanleitung](Documentation/Deutsch/Bedienungsanleitung.md) der CO2-Ampel V2 erläutert alle erforderlichen Schritte zur Inbetriebnahme und zur Nutzung einer fertigen CO2-Ampel. Sie deckt die folgenden Aspekte ab:
@@ -29,11 +29,11 @@ Die [Bedienungsanleitung](Documentation/Deutsch/Bedienungsanleitung.md) der CO2-
 Die bebilderte [Aufbauanleitung](Documentation/Deutsch/Aufbauanleitung.md) erklärt Schritt für Schritt, wie die CO2-Ampel aus den Einzelkomponenten zusammengesetz wird. Dies umfasst die folgenden Schritte:
 
 * Einlöten der fehlenden elektronischen Komponenten
-* Zusammenstecken und Verschrauben des GEräts
+* Zusammenstecken und Verschrauben des Geräts
 * Test und Fehlerbehebung
 
 ## Beschaffung bzw. Herstellung der Komponenten
-Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt einen Überblick, wie die Einzelkomponenten der CO2-Ampel basierend auf den Informationen in diesem GitHub-Projekt hergestellt bzw. beschafft werden können. Die Anleitung umfasst die folgenden Abschnitte:
+Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt einen Überblick, wie die Einzelkomponenten der CO2-Ampel basierend auf den Informationen in diesem GitHub-Repository hergestellt bzw. beschafft werden können. Die Anleitung umfasst die folgenden Abschnitte:
 
 * Beschaffung der Bauteile
 * Bestellung der Platine bei einem PCB-Haus
@@ -43,7 +43,7 @@ Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt
 * 3D-Druck des Gehäuses
 
 ## Weiterentwicklung des Projekts
-Der gesamte Quellcode der CO2-Ampel V2 wurde in diesem  GitHub-Projekt veröffentlicht. Er besteht aus den folgenden Komponenten:
+Der gesamte Quellcode der CO2-Ampel V2 wurde in diesem  GitHub-Repository veröffentlicht. Er besteht aus den folgenden Komponenten:
 
 * Platine ([Gerber](https://de.wikipedia.org/wiki/Gerber-Format))
 * Software (c++)
