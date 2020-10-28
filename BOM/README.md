@@ -12,7 +12,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 |04|RS-05K103JT|9|R1, R2, R3, R4, R6, R7, R8, R9, R11|10k|FH(Guangdong Fenghua Advanced Tech)|0805_R|[C115295][C115295]||
 |05|CC1206ZRY5V6BB106|2|C3, C4|10u| YAGEO|1206_C|[C113914][C113914] ||
 |06|1206L110THYR|1|F1|Fuse 1A|	Littelfuse|1206|[C126818][C126818] ||
-|07|RS-05K103JT|2|R10, R12|1k|FH(Guangdong Fenghua Advanced Tech)|0805_R|[C115295][C115295]|| 
+|07|RC0805JR-071KL|2|R10, R12|1k|YAGEO|0805_R|[C100046][C100046]|| 
 |08|RT1A102M0810|1|C1|1000u| ROQANG|SMD,8x10.2mm |[C280406][C280406] ||
 |09|BMP280|1|IC2|BMP280| Bosch Sensortec|LGA-8 |[C83291][C83291] ||
 |10|SS24|1|D1|Diode 2A| MDD(Microdiode Electronics)|SMB(DO-214AA)|[C35501][C35501] ||
@@ -37,7 +37,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 [C115295]: https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FH-Guangdong-Fenghua-Advanced-Tech-RS-05K103JT_C115295.html "C115295"
 [C126818]: https://lcsc.com/product-detail/PTC-Resettable-Fuses_Littelfuse-1206L110THYR_C126818.html "C126818"
 [C113914]: https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_YAGEO-CC1206ZRY5V6BB106_C113914.html "C113914"
-[C115295]: https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_FH-Guangdong-Fenghua-Advanced-Tech-RS-05K103JT_C115295.html "C115295"
+[C100046]: https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_YAGEO-RC0805JR-071KL_C100046.html 
 [C360619]: https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_CCTC-TCC0805X7R104M500DT_C360619.html "C360619"
 [C460977]: https://lcsc.com/product-detail/MOSFET_Diodes-Incorporated-DMG2302UK-7_C460977.html "C460977"
 [C92106]: https://lcsc.com/product-detail/Dropout-Regulators-LDO_Diodes-Incorporated-AZ1117EH-2-5TRG1_C92106.html "C92106"
