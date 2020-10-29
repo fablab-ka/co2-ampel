@@ -7,21 +7,21 @@ Diese Bedienungsanleitung richtet sich an diejenigen Benutzer, die eine einsatzb
 Die CO2-Ampel lässt sich in wenigen Schritten in Betrieb nehmen. Die einzelnen Schritte werden im den folgenden Kapiteln im Detail erklärt.
 
 1. Gerät an der Wand befestigen
-  * Gut sichtbare Stelle
-  * Keine direkte Sonneneinstrahlung
-  * Nicht direkt am Fenster
+   * Gut sichtbare Stelle
+   * Keine direkte Sonneneinstrahlung
+   * Nicht direkt am Fenster
 2. Stromversorgung anschließen
-  * USB-Steckernetzgerät, 5V, mindestens 1A
-  * USB-Kabel mit USB Stecker Typ B
+   * USB-Steckernetzgerät, 5V, mindestens 1A
+   * USB-Kabel mit USB Stecker Typ B
 3. Zur WLAN-Anbindung (optional):
-  * Mit dem WLAN-Zugangspunkt verbinden, den die Ampel in den ersten zwei Minuten nach dem Einschalten aufmacht.
-  * Adresse 192.168.4.1 im Browser öffnen.
-  * Mit Passwort anmelden, das zusammen mit dem Gerät übergeben  wurde.
-  * Internetzugang konfigurieren und speichern.
+   * Mit dem WLAN-Zugangspunkt verbinden, den die Ampel in den ersten zwei Minuten nach dem Einschalten aufmacht.
+   * Adresse 192.168.4.1 im Browser öffnen.
+   * Mit Passwort anmelden, das zusammen mit dem Gerät übergeben  wurde.
+   * Internetzugang konfigurieren und speichern.
 4. Den Farbcodes folgen:
-  - *Grün*: Alles OK! Falls gerade gelüftet wurde, können die Fenster wieder geschlossen werden.
-  - *Gelb*: Grenzwert überschritten. Schnellstmöglich lüften!
-  - *Rot*: Grenzwert deutlich überschritten. Umgehend lüften!
+   * *Grün*: Alles OK! Falls gerade gelüftet wurde, können die Fenster wieder geschlossen werden.
+   * *Gelb*: Grenzwert überschritten. Schnellstmöglich lüften!
+   * *Rot*: Grenzwert deutlich überschritten. Umgehend lüften!
 5. Das Gerät kann bei Nichtbenutzung von Stromnetz getrennt werden, zum Beispiel über Nacht oder über das Wochenende.
 
 ## Installation und Stromversorgung
@@ -62,18 +62,16 @@ Bei einer bestehenden WLAN-Verbindung wird empfohlen, die Ampel dauerhaft am gle
 
 ## Optische und akustische Signale
 
-Die CO2-Ampel misst laufend den CO2-Gehalt der Raumluft und zeigt durch optische und akustisches Signale an, falls der Messwert [den vom Bundesumweltamt empfohlenen Grenzwert](https://www.umweltbundesamt.de/sites/default/files/medien/2546/dokumente/irk_stellungnahme_lueften_sars-cov-2_0.pdf) überschreitet. Da der CO2-Gehalt der Raumluft ein Indikator für eine mögliche Virenbelastung der Raumluft darstellt, deutet er auf ein erhöhtes Ansteckungsrisiko mit durch über Aerosole übertragene Infektionskrankheiten hin.
-
-Das tatsächliche Ansteckungsrisiko hängt jedoch von einer Vielzahl von Faktoren ab. Die Verwendung der CO2-Ampel kann helfen, das Ansteckungsrisiko zu reduzieren, sie garantiert jedoch keinerlei Schutz vor einer Ansteckung!
+Die CO2-Ampel misst laufend den CO2-Gehalt der Raumluft und zeigt durch optische und akustisches Signale an, falls der Messwert [den vom Bundesumweltamt empfohlenen Grenzwert](https://www.umweltbundesamt.de/sites/default/files/medien/2546/dokumente/irk_stellungnahme_lueften_sars-cov-2_0.pdf) überschreitet. Da der CO2-Gehalt der Raumluft ein Indikator für eine mögliche Virenbelastung der Raumluft darstellt, deutet er auf ein erhöhtes Ansteckungsrisiko mit durch über Aerosole übertragene Infektionskrankheiten hin. Das tatsächliche Ansteckungsrisiko hängt jedoch von einer Vielzahl von Faktoren ab. Die Verwendung der CO2-Ampel kann helfen, das Ansteckungsrisiko zu reduzieren, sie garantiert jedoch keinerlei Schutz vor einer Ansteckung!
 
 ### Optische Signale
 Die folgende Tabelle gibt die Bedeutung der Farben und die empfohlenen Handlungen an. 
 
 |Farbcode|Bedeutung|Empfohlene Aktion|
-|---|---|---|---|
-|GRÜN (unteres&nbsp;Feld)|CO2-Grenzwert wird unterschritten.|Fenster können geschlossen werden, sofern gerade gelüftet wurde.|
-|GELB (oberes&nbsp;Feld)|CO2-Grenzwert wird **überschritten**.|Es sollte **schnellstmöglich** gelüftet werden!|
-|ROT (oberes&nbsp;Feld)|CO2-Grenzwert wird **deutich überschritten**.|Es muss **umgehend** gelüftet werden!|
+|---|---|---|
+|GRÜN<p>(unteres&nbsp;Feld)|CO2-Grenzwert unterschritten.|Fenster können geschlossen werden, sofern gerade gelüftet wurde.|
+|GELB<p>(oberes&nbsp;Feld)|CO2-Grenzwert **überschritten**.|Es sollte **schnellstmöglich** gelüftet werden!|
+|ROT<p>(oberes&nbsp;Feld)|CO2-Grenzwert **deutich überschritten**.|Es muss **umgehend** gelüftet werden!|
 
 Zum effizienten Lüften des Raumes würd eine **Sturmlüftung** empfohlen. Das heißt, es sollten möglichst alle Fenster komplett geöffnet werden. Die Ampel ist so konzipiert, dass sie beim Lüften erst dann auf grün umschaltet, wenn der CO2-Grenzwert **deutlich unterschritten** wird. Die Fenster können also gleich im Anschluss geschlossen werden.
 
@@ -108,7 +106,7 @@ Falls die Ampel nicht leuchtet oder ein blinkender Farbcode angezeigt wird, lieg
 ## Technische Daten
 In diesem Kapitel werden die wichtigsten technischen Daten der CO2-Ampel V2 zusammengefasst.
 
-###Stromversorgung
+### Stromversorgung
 
 |Merkmal|Wert|
 |---|---|
@@ -119,7 +117,7 @@ In diesem Kapitel werden die wichtigsten technischen Daten der CO2-Ampel V2 zusa
 ### CO2-Grenzwerte
 Steigender CO2-Wert (Fenster geschlossen):
 
-|CO2-Gehalt|Angezeigte Farbe|
+|CO2-Gehalt|Farbe|
 |---|---|
 |<=&nbsp;1000&nbsp;ppm|GRÜN|
 |>&nbsp;1000&nbsp;ppm<p><=&nbsp;1500&nbsp;ppm|GELB|
@@ -127,7 +125,7 @@ Steigender CO2-Wert (Fenster geschlossen):
 
 Fallender CO2-Wert (während des Lüftens):
 
-|CO2-Gehalt|Angezeigte Farbe|
+|CO2-Gehalt|Farbe|
 |---|---|
 |<=&nbsp;800&nbsp;ppm|GRÜN|
 |>&nbsp;800&nbsp;ppm<p><=&nbsp;1200&nbsp;ppm|GELB|

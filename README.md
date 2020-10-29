@@ -19,10 +19,11 @@ Bei der CO2-Ampel V2 handelt es sich um ein gemeinsames Projekt des [FabLab Karl
 Die [Bedienungsanleitung](Documentation/Deutsch/Bedienungsanleitung.md) der CO2-Ampel V2 erläutert alle erforderlichen Schritte zur Inbetriebnahme und zur Nutzung einer fertigen CO2-Ampel. Sie deckt die folgenden Aspekte ab:
 
 * Installation und Stromversorgung
-* Nutzung des Geräts im Alltag
+* Optische und akustische Signale
 * Konfiguration der WLAN-Verbindung (optional)
 * Zugriff auf die Messdaten und Protokolle (optional)
 * Fehlerbehebung
+* Technische Daten
 * Entsorgung
 
 ## Aufbauanleitung (Bausatz)
