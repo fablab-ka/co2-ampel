@@ -6,10 +6,10 @@ Der CO2-Gehalt der Luft kann als Indikator benutzt werden, um das Raumklima zu �
 
 Da Viren, die als Aerosol übertragen werden, zusammen mit dem CO2 in den Raum gebracht werden, kann über den CO2-Gehalt der Raumluft als Indikator für das Ansteckungsrisiko dienen.
 
-Mithilfe von CO2-Sensoren lässt sich der CO2-Gehalt der Raumluft überwachen. Viele vorhandenen Geräte erlauben zwar eine akkurate Messung, zeigen aber die Auswirkungen auf die Raumluft nur mit kleinen LED-Anzeigen oder überhaupt nicht an. Sie eignenen sich daher nur bedingt für den Einsatz in Gruppenräumen.
+Mithilfe von CO2-Sensoren lässt sich der CO2-Gehalt der Raumluft überwachen. Viele vorhandenen Geräte erlauben zwar eine akkurate Messung, zeigen aber die Auswirkungen auf die Raumluft nur mit kleinen LED-Anzeigen oder überhaupt nicht an. Sie eignen sich daher nur bedingt für den Einsatz in Gruppenräumen.
 
 ## Zielsetzung
-Die *CO2-Ampel V2* wurde speziell für Schulen und Kitas entwickelt. Sie zeigt das Raumklima spielerisch und gut sichtbar im Stil einer Verkehrsampel an. *Grün* bedeutet *alles in Ordnung*. Springt die Ampel auf *gelb*, wird es Zeit, die Fenster zu öffnen. Bei *rot* ist der Grenzwert überschritten. Ein akkustisches Signal weißt zusätzlich darauf hin, dass nunmehr umgehend gelüften werden muss. Sobald der CO2-Gehalt sich normalisiert hat, springt die Ampel wieder auf *grün*. Ein lachender bzw. ein trauriger Smiliey illustrieren das Messergebnis zusätzlich.
+Die *CO2-Ampel V2* wurde speziell für Schulen und Kitas entwickelt. Sie zeigt das Raumklima spielerisch und gut sichtbar im Stil einer Verkehrsampel an. *Grün* bedeutet *alles in Ordnung*. Springt die Ampel auf *gelb*, wird es Zeit, die Fenster zu öffnen. Bei *rot* ist der Grenzwert überschritten. Ein akustisches Signal weißt zusätzlich darauf hin, dass nunmehr umgehend gelüfteten werden muss. Sobald der CO2-Gehalt sich normalisiert hat, springt die Ampel wieder auf *grün*. Ein lachender bzw. ein trauriger Smiley illustrieren das Messergebnis zusätzlich.
 
 Das Gerät lässt sich leicht installieren und wird über ein gewöhnliches USB-Kabel mit Strom versorgt. Der eingebaute Sensor erlaubt präzise CO2-Messungen. Auf Wunsch lässt sich der Verlauf der Messwerte per WLAN in einem Web-Interface anzeigen und protokollieren.
 
@@ -26,7 +26,7 @@ Die [Bedienungsanleitung](Documentation/Deutsch/Bedienungsanleitung.md) der CO2-
 * Entsorgung
 
 ## Aufbauanleitung (Bausatz)
-Die bebilderte [Aufbauanleitung](Documentation/Deutsch/Aufbauanleitung.md) erklärt Schritt für Schritt, wie die CO2-Ampel aus den Einzelkomponenten zusammengesetz wird. Dies umfasst die folgenden Schritte:
+Die bebilderte [Aufbauanleitung](Documentation/Deutsch/Aufbauanleitung.md) erklärt Schritt für Schritt, wie die CO2-Ampel aus den Einzelkomponenten zusammengesetzt wird. Dies umfasst die folgenden Schritte:
 
 * Einlöten der fehlenden elektronischen Komponenten
 * Zusammenstecken und Verschrauben des Geräts

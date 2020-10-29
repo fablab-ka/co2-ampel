@@ -14,12 +14,14 @@ Die CO2-Ampel lässt sich in wenigen Schritten in Betrieb nehmen. Die einzelnen 
   * USB-Steckernetzgerät, 5V, mindestens 1A
   * USB-Kabel mit USB Stecker Typ B
 3. Zur WLAN-Anbindung (optional):
-  * Mit dem WLAN-Zugriffspunkt verbinden, den die Ampel in den ersten 2 Minuten nach dem Einschalten aufmacht.
-  * Internetzugang konfigurieren und speichern. 
+  * Mit dem WLAN-Zugangspunkt verbinden, den die Ampel in den ersten zwei Minuten nach dem Einschalten aufmacht.
+  * Adresse 192.168.4.1 im Browser öffnen.
+  * Mit Passwort anmelden, das zusammen mit dem Gerät übergeben  wurde.
+  * Internetzugang konfigurieren und speichern.
 4. Den Farbcodes folgen:
-  - Grün: Alles OK!
-  - Gelb: Es wird allmählich Zeit zum Lüften!
-  - Rot: CO2-Grenzwert überschritten. Umgehend lüften!
+  - *Grün*: Alles OK! Falls gerade gelüftet wurde, können die Fenster wieder geschlossen werden.
+  - *Gelb*: Grenzwert überschritten. Schnellstmöglich lüften!
+  - *Rot*: Grenzwert deutlich überschritten. Umgehend lüften!
 5. Das Gerät kann bei Nichtbenutzung von Stromnetz getrennt werden, zum Beispiel über Nacht oder über das Wochenende.
 
 ## Installation und Stromversorgung
@@ -46,45 +48,37 @@ Die Ampel schalten sich automatisch ein, sobald sie mit der Stromversorgung verb
 
 > 	Hinweis: Bitte beachten Sie die Hinweise zum Datenschutz unten, bevor Sie mit der Konfiguration der WLAN-Verbindung fortfahren!
 
-Direkt nach dem Einschalten der Ampel versucht diese zunächst, sich mit einem bereits zuvor konfigurierten WLAN-Zugriffspunkt zu verbinden. Gelingt dies nicht innerhalb dreißig Sekunden, oder war zuvor kein Zugriffspunkt konfiguriert worden, so macht die Ampel einen für 2 Minuten eigenen Zugriffspunkt auf, über den der WLAN-Zugriff im Anschluss konfiguriert werden kann. Gehen Sie folgedermaßen vor, um die WLAN-Verbindung zu konfigurieren:
+Direkt nach dem Einschalten der Ampel versucht diese zunächst, sich mit einem bereits zuvor konfigurierten WLAN-Zugangspunkt zu verbinden. Gelingt dies nicht innerhalb dreißig Sekunden, oder war zuvor kein Zugangspunkt konfiguriert worden, so macht die Ampel einen für 2 Minuten eigenen Zugangspunkt auf, über den der WLAN-Zugriff im Anschluss konfiguriert werden kann. Gehen Sie folgendermaßen vor, um die WLAN-Verbindung zu konfigurieren:
 
 1. Verbinden Sie die Ampel mit der Stromversorgung.
-2. Öffnen Sie an Ihrem PC oder auf Ihrem Smartphone die WLAN-Konfiguration und warten Sie ab, bis ein Zugriffspunkt *CO2Ampel-00000001* in der Liste der verfügbaren Zugriffspunkte erscheint.
-3. Verbinden Sie Ihreen PC bzw. Ihr Smartphone mit diesem Zugriffspunkt um sich direkt mit der Ampel zu verbinden.
-4. Geben Sie die IP-Adresse *192.168.178.1* in die Adresszeile Ihres Browsers ein und laden Sie die Seite.
-5. Es solle nun das Konfigurationsmenü der Amplel angezeigt werden.
-6. Tragen Sie nun die Details des Zugriffspunkts ein, mit dem die Ampel verbunden werden soll. Es handelt sich um die selben Daten, die Sie auch auf Ihrem PC oder Smartphone eintragen würden, um sich mit dem Internet zu verbinden.
+2. Öffnen Sie an Ihrem PC oder auf Ihrem Smartphone die WLAN-Konfiguration und warten Sie ab, bis ein Zugangspunkt *CO2Ampel-XXXXXXXX* in der Liste der verfügbaren Zugangspunkte erscheint.
+3. Verbinden Sie Ihren PC bzw. Ihr Smartphone mit diesem Zugangspunkt um sich direkt mit der Ampel zu verbinden.
+4. Geben Sie die IP-Adresse *192.168.4.1* in die Adresszeile Ihres Browsers ein und laden Sie die Seite.
+5. Melden Sie sich mit dem Passwort an, das Sie zusammen mit der CO2-Ampel erhalten haben.
+6. Tragen Sie nun die Details des Zugangspunkts ein, mit dem die Ampel verbunden werden soll. Es handelt sich um die selben Daten, die Sie auch auf Ihrem PC oder Smartphone eintragen würden, um sich mit dem Internet zu verbinden.
 7. Speichern Sie die Eintragungen und warten Sie die Bestätigung ab.
-8. Trennen Sie die Ampel für ca. 10 Sekunden von der Stromversorgung.
-9. Beim Neustart der Ampel sollte diese sich nun mit dem eingetragenen Zugriffspunkt verbinden.
 
 Bei einer bestehenden WLAN-Verbindung wird empfohlen, die Ampel dauerhaft am gleichen Ort zu betreiben, da die protokollierten Messwerte ansonsten wenig aussagekräftig sein werden.
 
-## Bedeutung der Farbcodes und Signale
+## Optische und akustische Signale
 
-Die CO2-Ampel misst laufend den CO2-Gehalt der Raumluft und zeigt durch optische und akkustisches Signale an, falls der Messwert die [vom Bundesumweltamt empfohlenen Grenwerte](https://www.umweltbundesamt.de/sites/default/files/medien/2546/dokumente/irk_stellungnahme_lueften_sars-cov-2_0.pdf) überschreitet. Da der CO2-Gehalt der Raumluft ein Indikator für eine mögliche Virenbelastung der Raumluft darstellt, deutet dieser auf ein erhöhtes Ansteckungsrisiko mit durch über Aerosole übertragene Infektionskrankheiten hin.
+Die CO2-Ampel misst laufend den CO2-Gehalt der Raumluft und zeigt durch optische und akustisches Signale an, falls der Messwert [den vom Bundesumweltamt empfohlenen Grenzwert](https://www.umweltbundesamt.de/sites/default/files/medien/2546/dokumente/irk_stellungnahme_lueften_sars-cov-2_0.pdf) überschreitet. Da der CO2-Gehalt der Raumluft ein Indikator für eine mögliche Virenbelastung der Raumluft darstellt, deutet er auf ein erhöhtes Ansteckungsrisiko mit durch über Aerosole übertragene Infektionskrankheiten hin.
 
 Das tatsächliche Ansteckungsrisiko hängt jedoch von einer Vielzahl von Faktoren ab. Die Verwendung der CO2-Ampel kann helfen, das Ansteckungsrisiko zu reduzieren, sie garantiert jedoch keinerlei Schutz vor einer Ansteckung!
 
-#### Farbcodes bei steigenden CO2-Werten (geschlossene Fenster)
-Die folgende Tabelle gibt die Bedeutung der Farben, die zugehörigen CO2-Grenzwerte und die empfohlenen Handlungen an. Bei jedem Wechsel der Farben ertönt zusätzlich ein **akkustisches Signal**.
+### Optische Signale
+Die folgende Tabelle gibt die Bedeutung der Farben und die empfohlenen Handlungen an. 
 
-|Farbcode|CO2-Gehalt|Bedeutung|Empfohlene Aktion|
+|Farbcode|Bedeutung|Empfohlene Aktion|
 |---|---|---|---|
-|GRÜN (unteres&nbsp;Feld)|<&nbsp;1000&nbsp;ppm|CO2-Grenzwert ist unterschritten.|Keine|
-|GELB (oberes&nbsp;Feld)|>&nbsp;1000&nbsp;ppm <&nbsp;1500&nbsp;ppm|CO2-Grenzwert ist **überschritten**.|Es sollte **bald** gelüftet werden|
-|ROT (oberes&nbsp;Feld)|>&nbsp;1500&nbsp;ppm|CO2-Grenzwert ist **überschritten**.|Es sollte **umgehend** gelüftet werden|
+|GRÜN (unteres&nbsp;Feld)|CO2-Grenzwert wird unterschritten.|Fenster können geschlossen werden, sofern gerade gelüftet wurde.|
+|GELB (oberes&nbsp;Feld)|CO2-Grenzwert wird **überschritten**.|Es sollte **schnellstmöglich** gelüftet werden!|
+|ROT (oberes&nbsp;Feld)|CO2-Grenzwert wird **deutich überschritten**.|Es muss **umgehend** gelüftet werden!|
 
-#### Farbcodes bei fallenden CO2-Werten (während des Lüftens)
-Zum effizienten Lüften des Raumes würd eine **Sturmlüftung** empfohlen. Das heißt, es sollten möglichst alle Fenster kurzzeitig komplett geöffnet werden. 
+Zum effizienten Lüften des Raumes würd eine **Sturmlüftung** empfohlen. Das heißt, es sollten möglichst alle Fenster komplett geöffnet werden. Die Ampel ist so konzipiert, dass sie beim Lüften erst dann auf grün umschaltet, wenn der CO2-Grenzwert **deutlich unterschritten** wird. Die Fenster können also gleich im Anschluss geschlossen werden.
 
-Die folgende Tabelle gibt die Bedeutung der Farben während des Lüftens an. Beim Wechsel auf grün ertönt zusätzlich ein **akkustisches Signal**, das angibt, dass die Fenster nun geschlossen werden können.
-
-|Farbcode|CO2-Gehalt|Bedeutung|Empfohlene Aktion|
-|---|---|---|---|
-|GRÜN (unteres&nbsp;Feld)|<&nbsp;700&nbsp;ppm|CO2-Gehalt hat sich normalisiert.|Fenster können **geschlossen** werden.|
-|GELB (oberes&nbsp;Feld)|>&nbsp;700&nbsp;ppm <&nbsp;1200&nbsp;ppm|CO2-Gehalt ist gesunken.|Es sollte **weiter** gelüftet werden.|
-|ROT (oberes&nbsp;Feld)|>&nbsp;1200&nbsp;ppm|CO2-Gehalt ist hoch.|Es sollte **weiter** gelüftet werden.|
+### Akustische Signale
+Bei ansteigendem CO2-Wert ertönt bei jedem Wechsel der Farben ein **akustisches Signal**. Beim fallendem CO2-Wert ertönt beim Wechsel auf grün ebenfalls ein Signal, das angibt, dass die Fenster nun geschlossen werden können.
 
 ## Datenschutz
 
@@ -100,25 +94,44 @@ Der Server zur Protokollierung der Messwerte ist in der Software des Geräts hin
 Falls Sie ein solches Dokument nicht erhalten, sollten Sie die oben beschriebene Konfiguration der WLAN-Verbindung **nicht** durchführen. Es werden dann keine Messdaten übertragen.
 
 ## Fehlerbehebung
-Falls die Ampel nicht leuchtet oder ein binkender Farbcode angezeigt wird, liegt womöglich ein Fehler vor. Die folgende Tabelle beschreibt einige typische Fehlerursachen.
+Falls die Ampel nicht leuchtet oder ein blinkender Farbcode angezeigt wird, liegt womöglich ein Fehler vor. Die folgende Tabelle beschreibt einige typische Fehlerursachen.
 
 |Symptom|Ursache|Behebung|
 |---|---|---|
 |Ampel leuchtet nicht|Kein Strom| Sitzen die Stecker fest? Hat die Steckdose Strom? Funktioniert die Ampel mit einem anderen Kabel bzw. einem anderen Steckernetzgerät?|
 |Ampel leuchtet nicht|LEDs sind ausgeschaltet| Der kleine Schiebeschalter seitlich unten and er Ampel muss nach oben zeigen, damit die Ampel leuchtet. Bitte überprüfen Sie die Position des Schalters!|
-|Ampel blinkt **gelb**|CO2-Wert zu niedrig|Der gemessene CO2-Wert ist unrealistisch niedrig. Gerät muss überprüft werden.|
-|Ampel blinkt abwechselnd **gelb** und **rot**|CO2-Sensor nicht erkannt|Ein Problem mit dem CO2-Sensor ist aufgetreten. Gerät muss überprüft werden.|
-|Ampel blinkt **blau**|Gemessener Luftdruck zu gering|Der gemessene Luftdruck istt unrealistisch gering. Gerät für 10 Sekunden von Stromversorgung trennen. Bei wiederholtem Auftreten Gerät überprüfen.|
-|Ampel blinkt abwechselnd **blau** und **rot**|Luftdrucksensor nicht erkannt|Ein Problem mit dem Luftdrucksensor (BMP280) ist aufgetreten. Gerät muss überprüft werden.|
+|Ampel blinkt *gelb*|CO2-Wert zu niedrig|Der gemessene CO2-Wert ist unrealistisch niedrig. Gerät muss überprüft werden.|
+|Ampel blinkt abwechselnd *gelb* und *rot*|CO2-Sensor nicht erkannt|Ein Problem mit dem CO2-Sensor ist aufgetreten. Gerät muss überprüft werden.|
+|Ampel blinkt *blau*|Gemessener Luftdruck zu gering|Der gemessene Luftdruck istt unrealistisch gering. Gerät für 10 Sekunden von Stromversorgung trennen. Bei wiederholtem Auftreten Gerät überprüfen.|
+|Ampel blinkt abwechselnd *blau* und *rot*|Luftdrucksensor nicht erkannt|Ein Problem mit dem Luftdrucksensor (BMP280) ist aufgetreten. Gerät muss überprüft werden.|
 
 ## Technische Daten
-Die folgende Tabelle zeigt die teschnischen Daten der CO2-Ampel.
+In diesem Kapitel werden die wichtigsten technischen Daten der CO2-Ampel V2 zusammengefasst.
 
-|Eigenschaft|Wert|
-|---|---|---|
+###Stromversorgung
+
+|Merkmal|Wert|
+|---|---|
 |Betriebsspannung|5 V Gleichspannung|
 |Stromaufnahme|ca. 500 mA|
 |Leistungsaufnahme|ca. 2,5 W|
+
+### CO2-Grenzwerte
+Steigender CO2-Wert (Fenster geschlossen):
+
+|CO2-Gehalt|Angezeigte Farbe|
+|---|---|
+|<=&nbsp;1000&nbsp;ppm|GRÜN|
+|>&nbsp;1000&nbsp;ppm<p><=&nbsp;1500&nbsp;ppm|GELB|
+|>&nbsp;1500&nbsp;ppm|ROT|
+
+Fallender CO2-Wert (während des Lüftens):
+
+|CO2-Gehalt|Angezeigte Farbe|
+|---|---|
+|<=&nbsp;800&nbsp;ppm|GRÜN|
+|>&nbsp;800&nbsp;ppm<p><=&nbsp;1200&nbsp;ppm|GELB|
+|>&nbsp;1200&nbsp;ppm|ROT|
 
 ## Entsorgung
 
