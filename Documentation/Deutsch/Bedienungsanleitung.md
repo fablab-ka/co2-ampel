@@ -7,21 +7,21 @@ Diese Bedienungsanleitung richtet sich an diejenigen Benutzer, die eine einsatzb
 Die CO2-Ampel lässt sich in wenigen Schritten in Betrieb nehmen. Die einzelnen Schritte werden im den folgenden Kapiteln im Detail erklärt.
 
 1. Gerät an der Wand befestigen
-  * Gut sichtbare Stelle
-  * Keine direkte Sonneneinstrahlung
-  * Nicht direkt am Fenster
+   * Gut sichtbare Stelle
+   * Keine direkte Sonneneinstrahlung
+   * Nicht direkt am Fenster
 2. Stromversorgung anschließen
-  * USB-Steckernetzgerät, 5V, mindestens 1A
-  * USB-Kabel mit USB Stecker Typ B
+   * USB-Steckernetzgerät, 5V, mindestens 1A
+   * USB-Kabel mit USB Stecker Typ B
 3. Zur WLAN-Anbindung (optional):
-  * Mit dem WLAN-Zugangspunkt verbinden, den die Ampel in den ersten zwei Minuten nach dem Einschalten aufmacht.
-  * Adresse 192.168.4.1 im Browser öffnen.
-  * Mit Passwort anmelden, das zusammen mit dem Gerät übergeben  wurde.
-  * Internetzugang konfigurieren und speichern.
+   * Mit dem WLAN-Zugangspunkt verbinden, den die Ampel in den ersten zwei Minuten nach dem Einschalten aufmacht.
+   * Adresse 192.168.4.1 im Browser öffnen.
+   * Mit Passwort anmelden, das zusammen mit dem Gerät übergeben  wurde.
+   * Internetzugang konfigurieren und speichern.
 4. Den Farbcodes folgen:
-  - *Grün*: Alles OK! Falls gerade gelüftet wurde, können die Fenster wieder geschlossen werden.
-  - *Gelb*: Grenzwert überschritten. Schnellstmöglich lüften!
-  - *Rot*: Grenzwert deutlich überschritten. Umgehend lüften!
+   * *Grün*: Alles OK! Falls gerade gelüftet wurde, können die Fenster wieder geschlossen werden.
+   * *Gelb*: Grenzwert überschritten. Schnellstmöglich lüften!
+   * *Rot*: Grenzwert deutlich überschritten. Umgehend lüften!
 5. Das Gerät kann bei Nichtbenutzung von Stromnetz getrennt werden, zum Beispiel über Nacht oder über das Wochenende.
 
 ## Installation und Stromversorgung
@@ -70,7 +70,7 @@ Das tatsächliche Ansteckungsrisiko hängt jedoch von einer Vielzahl von Faktore
 Die folgende Tabelle gibt die Bedeutung der Farben und die empfohlenen Handlungen an. 
 
 |Farbcode|Bedeutung|Empfohlene Aktion|
-|---|---|---|---|
+|---|---|---|
 |GRÜN (unteres&nbsp;Feld)|CO2-Grenzwert wird unterschritten.|Fenster können geschlossen werden, sofern gerade gelüftet wurde.|
 |GELB (oberes&nbsp;Feld)|CO2-Grenzwert wird **überschritten**.|Es sollte **schnellstmöglich** gelüftet werden!|
 |ROT (oberes&nbsp;Feld)|CO2-Grenzwert wird **deutich überschritten**.|Es muss **umgehend** gelüftet werden!|
