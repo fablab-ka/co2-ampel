@@ -16,17 +16,27 @@ long lastMQTTReconnectAttempt = 0;
 uint8_t failedCounter;
 uint8_t mqttFirstConnect=0;
 
+String mqttUsername="";
+String mqttOrg="";
 
 void setupMQTT(ConfigManager &configManager) 
 {
+  mqttUsername = configManager.getCharValue("mqtt_username", "");
   wifiClient.setFingerprint(configManager.getCharValue("ssl_fingerprint", SSL_FINGERPRINT));
   mqttClient.setServer(configManager.getCharValue("mqtt_host", MQTT_HOST),configManager.getUintValue("mqtt_port", MQTT_PORT));
+  mqttClient.setCallback(mqttCallback);
   
 }
 
 
 bool reconnectMQTT(ConfigManager &configManager) {
-  mqttClient.connect(configManager.getCharValue("mqtt_username", "\0"), configManager.getCharValue("mqtt_username", "\0"), configManager.getCharValue("mqtt_password", "\0"));
+  Serial.print("mqtt connect with username: ");
+  Serial.println(mqttUsername);
+  mqttClient.connect(mqttUsername.c_str(), mqttUsername.c_str(), configManager.getCharValue("mqtt_password", "\0"));
+  if (mqttClient.connected() && mqttUsername!="") {
+    String topic = String("config/")+mqttUsername+String("/org");
+    mqttClient.subscribe(topic.c_str());
+  }
   return mqttClient.connected();
 }
 
@@ -61,8 +71,12 @@ void publishValues(ConfigManager &configManager, uint16_t co2, double hum, doubl
     Serial.print("MQTT not connected, cant publish!");
     return;
   }
+  if (mqttOrg=="") {
+    Serial.print("MQTT org unknown, cant publish!");
+    return;
+  }
   StaticJsonDocument<256> root;
-  root["sensor"] = configManager.getCharValue("mqtt_username", "UNKNOWN");
+  root["sensor"] = mqttUsername;
   JsonObject data = root.createNestedObject("data");
   data["co2"] = co2;
   data["humidity"] = hum;
@@ -74,7 +88,7 @@ void publishValues(ConfigManager &configManager, uint16_t co2, double hum, doubl
   data["runtime"] = runtime;
   char buffer[512];
   serializeJson(root, buffer);
-  String topic = "sensors/"+String(configManager.getCharValue("mqtt_organisation", MQTT_ORGANISATION))+"/"+String(configManager.getCharValue("mqtt_username", "UNKNOWN"));
+  String topic = "sensors/"+mqttOrg+"/"+mqttUsername;
   if (!mqttClient.publish(topic.c_str(), buffer))  {
     Serial.print(F("Sensor value publish Failed!"));
     failedCounter++;
@@ -85,5 +99,19 @@ void publishValues(ConfigManager &configManager, uint16_t co2, double hum, doubl
   if(failedCounter > 100) {
     while (1) // freeze
       ;
+  }
+}
+
+void mqttCallback(char* topic, byte* payload, unsigned int length) {
+  if (String(topic) == "config/"+mqttUsername+"/org") {
+    String messageTemp;
+    for (int i = 0; i < length; i++) {
+      messageTemp += (char)payload[i];
+    }
+    Serial.print("Message arrived on topic: ");
+    Serial.print(topic);
+    Serial.print(". Message: ");
+    Serial.println(messageTemp);
+    mqttOrg=messageTemp;
   }
 }

@@ -3,7 +3,6 @@
 
 #define MQTT_HOST "co2-mqtt.fablab-karlsruhe.de" // overriden by mqtt_host from config.json 
 #define MQTT_PORT 443 // overriden by mqtt_port from config.json 
-#define MQTT_ORGANISATION "fablabka" // overriden by mqtt_organisation from config.json 
 /*
   CO2 Ampel - PCB v2.0 + v1.0
   By: FabLab Karlsruhe e.V., Nils Roßmann
