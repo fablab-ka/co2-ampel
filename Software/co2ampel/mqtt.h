@@ -21,5 +21,6 @@
 void loopMQTT(ConfigManager &configManager);
 void setupMQTT(ConfigManager &configManager);
 void publishValues(ConfigManager &configManager, uint16_t co2, double hum ,double temp, double pressure, double temp2, Color color, float RssI, uint32_t runtime);
+void mqttCallback(char* topic, byte* payload, unsigned int length);
 
 #endif
