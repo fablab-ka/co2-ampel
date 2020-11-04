@@ -40,7 +40,9 @@ void ledSetColor(Color color) {
 void setupLED() {
   led1.begin();
   led1.show();
+  led1.show();
   led2.begin();
+  led2.show();
   led2.show();
 }
 
