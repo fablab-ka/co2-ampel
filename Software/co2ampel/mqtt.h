@@ -10,9 +10,9 @@
 #define MQTT_H
 
 #include <ESP8266WiFi.h>
-#include <PubSubClient.h> // https://github.com/knolleary/pubsubclient
+#include <PubSubClient.h> // https://github.com/knolleary/pubsubclient (2.8.0)
 #include <WiFiClientSecure.h>
-#include <ArduinoJson.h> //https://github.com/bblanchon/ArduinoJson
+#include <ArduinoJson.h> //https://github.com/bblanchon/ArduinoJson (6.16.1, don't install 6.17.0)
 
 #include "ConfigManager.h"
 #include "config.h"

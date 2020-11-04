@@ -9,7 +9,7 @@
 #ifndef WIFI_H
 #define WIFI_H
 
-#include <WiFiManager.h> // https://github.com/tzapu/WiFiManager
+#include <WiFiManager.h> // https://github.com/tzapu/WiFiManager (2.0.3-alpha)
 
 #include "config.h"
 #include "ConfigManager.h"

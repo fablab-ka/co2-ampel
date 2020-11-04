@@ -16,8 +16,8 @@
  */
 
 #include <Wire.h>
-#include "SparkFun_SCD30_Arduino_Library.h" // https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library
-#include <Adafruit_BMP280.h> // https://github.com/adafruit/Adafruit_BMP280_Library
+#include "SparkFun_SCD30_Arduino_Library.h" // https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library (1.0.8)
+#include <Adafruit_BMP280.h> // https://github.com/adafruit/Adafruit_BMP280_Library (2.1.0)
 #include <ESP8266WiFi.h>
 
 #include "ConfigManager.h"

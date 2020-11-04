@@ -9,7 +9,7 @@
 #ifndef LED_H
 #define LED_H
 
-#include <Adafruit_NeoPixel.h> //https://github.com/adafruit/Adafruit_NeoPixel
+#include <Adafruit_NeoPixel.h> //https://github.com/adafruit/Adafruit_NeoPixel (1.6.0)
 
 #include "config.h"
 

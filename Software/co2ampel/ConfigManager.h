@@ -10,7 +10,7 @@
 #define ConfigManager_h
 
 #include <LittleFS.h>
-#include <ArduinoJson.h> //https://github.com/bblanchon/ArduinoJson
+#include <ArduinoJson.h> //https://github.com/bblanchon/ArduinoJson (6.16.1, don't install 6.17.0)
 
 #include "config.h"
 
