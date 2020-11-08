@@ -48,7 +48,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
 #define CONFIGMANAGER_DEBUG 1
 
 /* ***************************** PCB Revision *************************/
-#define PCBV2
+#define PCBV1
 
 
 
@@ -120,7 +120,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
 // BME280
 #define BMP_ENABLED 0
 // self test
-#define SELFTEST 1 //overriden by selftest_enabled from config.json 
+#define SELFTEST_ENABLED 1 //overriden by selftest_enabled from config.json 
 #endif
 
 #endif
