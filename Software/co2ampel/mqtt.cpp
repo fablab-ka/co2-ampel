@@ -23,6 +23,7 @@ void setupMQTT(ConfigManager &configManager)
 {
   mqttUsername = configManager.getCharValue("mqtt_username", "");
   wifiClient.setFingerprint(configManager.getCharValue("ssl_fingerprint", SSL_FINGERPRINT));
+  mqttClient.setBufferSize(1100);
   mqttClient.setServer(configManager.getCharValue("mqtt_host", MQTT_HOST),configManager.getUintValue("mqtt_port", MQTT_PORT));
   mqttClient.setCallback(mqttCallback);
   
@@ -34,7 +35,7 @@ bool reconnectMQTT(ConfigManager &configManager) {
   Serial.println(mqttUsername);
   mqttClient.connect(mqttUsername.c_str(), mqttUsername.c_str(), configManager.getCharValue("mqtt_password", "\0"));
   if (mqttClient.connected() && mqttUsername!="") {
-    String topic = String("config/")+mqttUsername+String("/org");
+    String topic = String("config/")+mqttUsername+String("/#");
     mqttClient.subscribe(topic.c_str());
   }
   return mqttClient.connected();
@@ -86,14 +87,15 @@ void publishValues(ConfigManager &configManager, uint16_t co2, double hum, doubl
   data["color"] = int(color);
   data["rssi"] = RssI;
   data["runtime"] = runtime;
+  data["version"] = String(VERSION)+"."+String(configManager.getCharValue("version", "0"));
   char buffer[512];
   serializeJson(root, buffer);
   String topic = "sensors/"+mqttOrg+"/"+mqttUsername;
   if (!mqttClient.publish(topic.c_str(), buffer))  {
-    Serial.print(F("Sensor value publish Failed!"));
+    Serial.print("Sensor value publish Failed!");
     failedCounter++;
   } else {
-    Serial.print(F("Sensor value publish OK! "));
+    Serial.print("Sensor value publish OK! ");
   }
   Serial.println(buffer);
   if(failedCounter > 100) {
@@ -103,15 +105,23 @@ void publishValues(ConfigManager &configManager, uint16_t co2, double hum, doubl
 }
 
 void mqttCallback(char* topic, byte* payload, unsigned int length) {
+  String messageTemp;
+  for (int i = 0; i < length; i++) {
+    messageTemp += (char)payload[i];
+  }
+  Serial.print("Message arrived on topic: ");
+  Serial.print(topic);
+  Serial.print(". Message: ");
+  Serial.println(messageTemp);
   if (String(topic) == "config/"+mqttUsername+"/org") {
-    String messageTemp;
-    for (int i = 0; i < length; i++) {
-      messageTemp += (char)payload[i];
-    }
-    Serial.print("Message arrived on topic: ");
-    Serial.print(topic);
-    Serial.print(". Message: ");
-    Serial.println(messageTemp);
     mqttOrg=messageTemp;
+  } else if (String(topic) == "config/"+mqttUsername+"/calibrate") {
+    uint16_t concentration = messageTemp.toInt();
+    Serial.println(concentration);
+    if(concentration >= 400 && concentration <= 2000 && millis() > SCD30_CALIBRATION_MIN_RUNTIME*1000) {
+      scd30ForceRecalibration(concentration);
+    }
+  } else if (String(topic) == "config/"+mqttUsername+"/json") {
+    setConfig(messageTemp);
   }
 }

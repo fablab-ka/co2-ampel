@@ -17,6 +17,7 @@
 #include "ConfigManager.h"
 #include "config.h"
 #include "led.h"
+#include "co2ampel.h"
 
 void loopMQTT(ConfigManager &configManager);
 void setupMQTT(ConfigManager &configManager);

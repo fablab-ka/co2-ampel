@@ -12,4 +12,9 @@
   "ssl_fingerprint": "06 d8 e3 d2 f7 5c 57 69 45 29 f6 4e 8c 3e 19 95 32 39 b4 6e",
   "selftest_enabled": 1,
   "buzzer_enabled": 1
+  "th_green": 800,
+  "th_yellow_low": 1000,
+  "th_yellow_high": 1200,
+  "th_red": 1500,
+  "version": "1"
 }

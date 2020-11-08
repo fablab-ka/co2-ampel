@@ -21,12 +21,16 @@ class ConfigManager {
   int8_t readConfig(const String file) {
     return readConfig(file.c_str());
   };
+  int8_t writeConfig(const char *fileName);
+  int8_t writeConfig(const String file) {
+    return writeConfig(file.c_str());
+  };
+  int8_t writeConfig(const String jsonString, const char *fileName);
   const char *getCharValue(const char* key, const char *defaultValue = '\0');
   uint16_t getUintValue(const char* key, uint16_t defaultValue = 0);
 
   private:
     StaticJsonDocument<1024> m_doc;
-    uint8_t m_status;
-  
+    uint8_t m_status; 
 };
 #endif

@@ -1,8 +1,3 @@
-#ifndef CONFIG_H
-#define CONFIG_H
-
-#define MQTT_HOST "co2-mqtt.fablab-karlsruhe.de" // overriden by mqtt_host from config.json 
-#define MQTT_PORT 443 // overriden by mqtt_port from config.json 
 /*
   CO2 Ampel - PCB v2.0 + v1.0
   By: FabLab Karlsruhe e.V., Nils Roßmann
@@ -10,6 +5,17 @@
   Date: 13.10.2020
   License: MIT
 */
+
+#ifndef CONFIG_H
+#define CONFIG_H
+
+/******************************* Version **************************************/
+#define VERSION 1
+
+/******************************* MQTT **************************************/
+
+#define MQTT_HOST "co2-mqtt.fablab-karlsruhe.de" // overriden by mqtt_host from config.json 
+#define MQTT_PORT 443 // overriden by mqtt_port from config.json 
 
 #define SSL_FINGERPRINT "06 d8 e3 d2 f7 5c 57 69 45 29 f6 4e 8c 3e 19 95 32 39 b4 6e" // overriden by ssl_fingerprint from config.json 
 #define MQTT_INTERVAL 4000 // overriden by mqtt_interval from config.json 
@@ -25,6 +31,18 @@
 
 /******************************* Colors **************************************/
 enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
+
+
+/******************************* scd30 **************************************/
+#define SCD30_AUTOCALIBRATION 0
+#define SCD30_CALIBRATION_MIN_RUNTIME 180 //seconds
+#define SCD30_MEASUREMENT_INTERVAL 2 // seconds (recalibrate, if you change this value)
+
+/******************************* thresholds **************************************/
+#define TH_GREEN 750 //overriden by th_green from config.json
+#define TH_YELLOW_LOW 1000 //overriden by th_yellow_low from config.json
+#define TH_YELLOW_HIGH 1200 //overriden by th_yellow_high from config.json
+#define TH_RED 1500 //overriden by th_red from config.json
 
 /******************************* MISC **************************************/
 #define CONFIGMANAGER_DEBUG 1

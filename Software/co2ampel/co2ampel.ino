@@ -26,14 +26,15 @@
 #include "wifi.h"
 #include "buzzer.h"
 #include "led.h"
+#include "co2ampel.h"
 
 SCD30 airSensor;
 
+uint16_t green_th;
+uint16_t yellow_thL;
+uint16_t yellow_thH;
+uint16_t red_th;
 
-uint16_t green_th=800;
-uint16_t yellow_thL=1000;
-uint16_t yellow_thH=1200;
-uint16_t red_th=1500;
 Color currentCO2Color=GREEN;
 
 
@@ -45,6 +46,7 @@ Adafruit_Sensor *bmp_pressure = bmp.getPressureSensor();
 
 uint32_t mqttLastSend = 0;
 uint32_t mqttLastTry = 0;
+uint32_t scd30LastUpdate = 0;
 bool bmpEnabled = BMP_ENABLED;
 
 bool bmpReady=false;
@@ -98,6 +100,25 @@ void selftest()
   }
 }
 
+void scd30ForceRecalibration(uint16_t concentration) {
+  bool ok = airSensor.setForcedRecalibrationFactor(concentration);
+  Serial.print("calibration status: ");
+  Serial.println(ok);
+  if (ok) ledBlink(GREEN,DARK,2000);
+  else ledBlink(RED,DARK,2000);
+}
+
+void setConfig(String& jsonString) {
+  uint8_t err = configManager.writeConfig(jsonString,"/config.json");
+  if(err!=0) {
+    Serial.println("failed writing new config.json");
+  } else {
+    Serial.println("saved new config.json to flash");
+  }
+  while (1) // freez and reboot due to watchdog
+  ;
+}
+
 /**************************** setup() *************************************************/
 
 void setup()
@@ -119,17 +140,43 @@ void setup()
 
   configStatus=configManager.readConfig("/config.json");
 
+  // check if mqtt credentials are set
+  if(configStatus==0) {
+    if(configManager.getCharValue("mqtt_password", "")=="" || configManager.getCharValue("mqtt_username", "")=="") {
+      configStatus=1;
+      Serial.println("mqtt username and password not set in config.json");
+    }
+  }
+  
+  if(configStatus!=0) {
+    Serial.println("could not read config.json, try reading backup.json");
+    configStatus=configManager.readConfig("/backup.json");
+    if(configStatus==0) {
+      uint8_t err = configManager.writeConfig("/config.json");
+      if(err) {
+        Serial.println("could not restore config.json");
+      } else {
+        Serial.println("restored config.json with backup.json");
+      }
+    }
+  }
 
+  green_th = configManager.getUintValue("th_green", TH_GREEN);
+  Serial.print("green_th: ");
+  Serial.println(green_th);
+  yellow_thL = configManager.getUintValue("th_yellow_low", TH_YELLOW_LOW);
+  yellow_thH = configManager.getUintValue("th_yellow_high", TH_YELLOW_HIGH);
+  red_th = configManager.getUintValue("th_red", TH_RED);
+    
   if(configStatus==0 && configManager.getUintValue("wifi_enabled", WIFI_ENABLED)) {
-    setupWifi(configManager);
-
-    setupMQTT(configManager);
+      setupWifi(configManager);
+      setupMQTT(configManager);
   }
 
   Wire.begin();
 
   // Init SCD30
-  if (airSensor.begin() == false)
+  if (airSensor.begin(Wire, SCD30_AUTOCALIBRATION) == false)
   {
     Serial.println("Air sensor not detected. Please check wiring. Freezing...");
     ledBlink(YELLOW,RED,5000);
@@ -139,7 +186,7 @@ void setup()
     scd30Ready=true;
   }
   airSensor.setAmbientPressure(1005);
-  airSensor.setMeasurementInterval(2); // wert geht runter, wenn man das intervall reduziert
+  airSensor.setMeasurementInterval(SCD30_MEASUREMENT_INTERVAL);
   airSensor.setTemperatureOffset(SCD30_TEMP_OFFSET);
 
   // Init bmp280
@@ -169,9 +216,18 @@ void loop()
   }
 
   int co2Available=digitalRead(GPIO_SCD30_RDY);
+
+  if(abs(millis()-scd30LastUpdate) > SCD30_MEASUREMENT_INTERVAL*5000) {
+    Serial.println("didn't received co2 updates for some time");
+    airSensor.sendCommand(0xD304);
+    delay(1000);
+    while (1) // freez and reboot due to watchdog
+   ;  
+  }
   
   if (co2Available && airSensor.dataAvailable())
   {
+    scd30LastUpdate=millis();
     uint16_t co2 = airSensor.getCO2();
     Serial.print(co2);   
     Serial.print(" ");
