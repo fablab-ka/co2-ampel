@@ -48,7 +48,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
 #define CONFIGMANAGER_DEBUG 1
 
 /* ***************************** PCB Revision *************************/
-#define PCBV1
+#define PCBV2
 
 
 
