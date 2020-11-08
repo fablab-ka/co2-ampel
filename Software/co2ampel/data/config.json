@@ -3,7 +3,7 @@
   "wifi_ap_password": "CHANGEME",
   "wifi_enabled": 1,
   "wifi_portal_timeout": 120,
-  "wifi_connect_timeout": 30,
+  "wifi_connect_timeout": 60,
   "mqtt_host": "co2-mqtt.fablab-karlsruhe.de",
   "mqtt_port": 443,
   "mqtt_username": "00000001",
@@ -16,5 +16,6 @@
   "th_yellow_low": 1000,
   "th_yellow_high": 1200,
   "th_red": 1500,
+  "selftest_buzzer": 0,
   "version": "1"
 }
