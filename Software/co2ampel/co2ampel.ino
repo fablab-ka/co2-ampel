@@ -217,7 +217,7 @@ void loop()
 
   int co2Available=digitalRead(GPIO_SCD30_RDY);
 
-  if(abs(millis()-scd30LastUpdate) > SCD30_MEASUREMENT_INTERVAL*5000) {
+  if(abs(millis()-scd30LastUpdate) > SCD30_MEASUREMENT_INTERVAL*50000) {
     Serial.println("didn't received co2 updates for some time");
     airSensor.sendCommand(0xD304);
     delay(1000);
