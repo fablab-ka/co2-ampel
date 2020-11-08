@@ -123,5 +123,10 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
     }
   } else if (String(topic) == "config/"+mqttUsername+"/json") {
     setConfig(messageTemp);
+  } else if (String(topic) == "config/"+mqttUsername+"/resetwifi") {
+    if(messageTemp.toInt()) {
+      WiFi.disconnect(true); // disconnect and delete credentials in flash
+      while (1); // freeze and reboot due to watchdog 
+    }
   }
 }

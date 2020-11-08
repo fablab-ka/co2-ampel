@@ -62,7 +62,7 @@ uint8_t configStatus;
 void selftest() 
 {
   ledSetColor(WHITE);
-  delay(5000);
+  delay(2500);
   bool ok=true;
   sensors_event_t pressure_event;
   uint16_t co2;
@@ -87,13 +87,14 @@ void selftest()
       }
     }
   }
+  uint16_t beepEnabled = configManager.getUintValue("selftest_buzzer", SELFTEST_BUZZER);
   
   if(ok) {
-    beepOK(configManager);
-    ledBlink(GREEN,DARK,5000);
+    if(beepEnabled) beepOK(configManager);
+    ledBlink(GREEN,DARK,2500);
   }
   else {
-    beepFailure(configManager);
+    if(beepEnabled) beepFailure(configManager);
     if(!bmpReady) ledBlink(BLUE,RED,5000);
     else if(pressure_event.pressure < 700) ledBlink(BLUE,DARK,5000);
     else if (co2 < 350) ledBlink(YELLOW,DARK,5000);

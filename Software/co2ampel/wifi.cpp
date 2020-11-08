@@ -18,6 +18,7 @@ uint8_t wifiPortalStarted=0;
 uint8_t wifiConnected=0;
 uint32_t wifiBeginnTime=0;
 uint8_t wifiUsePortal=0;
+uint8_t wifiFirstConnect=0;
 
 void setupWifi(ConfigManager &configManager) {
     
@@ -83,6 +84,11 @@ void loopWifi(ConfigManager &configManager) {
     }
     Serial.println("connectedCallback wifimanager deaktiviert: ");
   }
+
+  if(wifiConnected && !wifiFirstConnect) {
+    wifiFirstConnect=1;
+    ledBlink(WHITE,DARK,1000);
+  }
   
   if(abs(millis() - wifiLastPrint) >= 1000) {
      Serial.println(WiFi.status());
@@ -101,4 +107,5 @@ void connectedCallback(const WiFiEventStationModeGotIP& event) {
   wifiConnected=1;
   Serial.print("VERBUNDEN: ");
   Serial.println(event.ip);
+
 }

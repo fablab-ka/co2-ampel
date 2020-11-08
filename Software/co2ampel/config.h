@@ -27,7 +27,7 @@
 #define WIFI_AP_SSID "CO2Ampel" // overriden by wifi_ap_ssid from config.json 
 #define WIFI_AP_PASSWORD "CHANGEME" // overriden by wifi_ap_password from config.json 
 #define WIFI_PORTAL_TIMEOUT 120 //seconds // overriden by wifi_portal_timeout from config.json 
-#define WIFI_CONNECT_TIMEOUT 30 //seconds // overriden by wifi_connect_timeout from config.json 
+#define WIFI_CONNECT_TIMEOUT 60 //seconds // overriden by wifi_connect_timeout from config.json 
 
 /******************************* Colors **************************************/
 enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
@@ -86,6 +86,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
 #define BMP_ENABLED 1
 // self test
 #define SELFTEST_ENABLED 1 //overriden by selftest_enabled from config.json 
+#define SELFTEST_BUZZER 0 //overriden by selftest_buzzer from config.json 
 
 #endif
 
@@ -120,7 +121,8 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
 // BME280
 #define BMP_ENABLED 0
 // self test
-#define SELFTEST_ENABLED 1 //overriden by selftest_enabled from config.json 
+#define SELFTEST_ENABLED 1 //overriden by selftest_enabled from config.json
+#define SELFTEST_BUZZER 1 //overriden by selftest_buzzer from config.json 
 #endif
 
 #endif

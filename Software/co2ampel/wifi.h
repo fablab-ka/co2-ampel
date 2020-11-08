@@ -14,6 +14,7 @@
 #include "config.h"
 #include "ConfigManager.h"
 #include "buzzer.h"
+#include "led.h"
 
 
 void loopWifi(ConfigManager &configManager);
