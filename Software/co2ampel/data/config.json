@@ -14,8 +14,8 @@
   "buzzer_enabled": 1,
   "th_green": 800,
   "th_yellow_low": 1000,
-  "th_yellow_high": 1200,
-  "th_red": 1500,
+  "th_yellow_high": 1500,
+  "th_red": 2000,
   "selftest_buzzer": 0,
   "version": "1"
 }

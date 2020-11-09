@@ -39,10 +39,10 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
 #define SCD30_MEASUREMENT_INTERVAL 2 // seconds (recalibrate, if you change this value)
 
 /******************************* thresholds **************************************/
-#define TH_GREEN 750 //overriden by th_green from config.json
+#define TH_GREEN 800 //overriden by th_green from config.json
 #define TH_YELLOW_LOW 1000 //overriden by th_yellow_low from config.json
-#define TH_YELLOW_HIGH 1200 //overriden by th_yellow_high from config.json
-#define TH_RED 1500 //overriden by th_red from config.json
+#define TH_YELLOW_HIGH 1500 //overriden by th_yellow_high from config.json
+#define TH_RED 2000 //overriden by th_red from config.json
 
 /******************************* MISC **************************************/
 #define CONFIGMANAGER_DEBUG 1
