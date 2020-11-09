@@ -30,7 +30,7 @@
 #define WIFI_CONNECT_TIMEOUT 60 //seconds // overriden by wifi_connect_timeout from config.json 
 
 /******************************* Colors **************************************/
-enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE};
+enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE, GREEN2, YELLOW2, RED2};
 
 
 /******************************* scd30 **************************************/

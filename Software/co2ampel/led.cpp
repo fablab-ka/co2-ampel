@@ -63,6 +63,9 @@ void ledSetColor(Color color) {
     case GREEN: green1=255*brightnes;  break;
     case BLUE: blue2=255*brightnes; break;
     case WHITE: red1=255*brightnes;green1=255*brightnes;blue1=255*brightnes;red2=255*brightnes;green2=255*brightnes;blue2=255*brightnes; break;
+    case RED2: red1=255*brightnes; red2=255*brightnes; break;
+    case YELLOW2: red1=255*brightnes; green1=128*brightnes; red2=255*brightnes; green2=128*brightnes;  break;
+    case GREEN2: green1=255*brightnes; green2=255*brightnes;  break;
     case DARK: break;
   }
   

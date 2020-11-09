@@ -48,6 +48,8 @@ uint32_t mqttLastSend = 0;
 uint32_t mqttLastTry = 0;
 uint32_t scd30LastUpdate = 0;
 bool bmpEnabled = BMP_ENABLED;
+uint8_t recalibrateSwitch=0;
+uint32_t lastSwitchChange=0;
 
 bool bmpReady=false;
 bool scd30Ready=false;
@@ -118,6 +120,25 @@ void setConfig(String& jsonString) {
   }
   while (1) // freez and reboot due to watchdog
   ;
+}
+
+void startCalibration() {
+  ledSetColor(YELLOW2);
+  delay(600000); // wait 10min
+  bool ok = airSensor.setForcedRecalibrationFactor(400);
+  Serial.print("calibration status: ");
+  Serial.println(ok);
+  if (ok) {
+    ledBlink(GREEN,DARK,2000);
+    ledSetColor(GREEN2);
+  }
+  else {
+    ledBlink(RED2,DARK,2000);
+    ledSetColor(RED);
+  }
+  while(1) {
+    delay(1000);
+  }
 }
 
 /**************************** setup() *************************************************/
@@ -215,6 +236,33 @@ void loop()
     loopWifi(configManager);
     loopMQTT(configManager);
   }
+
+#ifdef GPIO_SWITCH
+  // check recalibration switch
+  if(millis() < 30000 && abs(millis()-lastSwitchChange) > 500) {
+    int switchState = digitalRead(GPIO_SWITCH);
+    if(switchState==1 && recalibrateSwitch==0) {
+      recalibrateSwitch++;
+      lastSwitchChange=millis();
+      Serial.println("switch is on at start");
+    }
+    if(switchState==0 && recalibrateSwitch==1) {
+      recalibrateSwitch++;
+      lastSwitchChange=millis();
+      Serial.println("switch is off");
+    }
+    if(switchState==1 && recalibrateSwitch==2) {
+      recalibrateSwitch++;
+      lastSwitchChange=millis();
+      Serial.println("switch is on again");
+    }
+  }
+  if(recalibrateSwitch>=3) {
+    Serial.println("start Calibration");
+    recalibrateSwitch=0;
+    startCalibration();
+  } 
+#endif
 
   int co2Available=digitalRead(GPIO_SCD30_RDY);
 
