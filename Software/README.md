@@ -6,7 +6,7 @@ In Klammern steht jeweils die von uns getestete Version.
 - Arduino Libaries
   - [SparkFun SCD30 Arduino Library (1.0.8)][scd30lib]
   - [Adafruit BMP280 Library (2.1.0)][bmp280lib]
-  - [ArduinoJson (6.16.1)][arduinojsonlib] **HINWEIS**: Die aktuelle [Version 6.17.0 hat einen Bug][arduinojsonbug] und ist daher aktuell nicht kompatibel. Bitte achtet darauf, die Version 6.16.1 zu installieren.
+  - [ArduinoJson (6.17.1)][arduinojsonlib] **HINWEIS**: Die [Version 6.17.0 hat einen Bug][arduinojsonbug] und ist daher aktuell nicht kompatibel. Bitte achtet darauf, die Version 6.17.1 oder 6.16.1 zu installieren.
   - [Adafruit NeoPixel (1.6.0)][neopixellib]
   - [ PubSubClient (2.8.0)][pubsubclientlib]
   - [WiFiManager (2.0.3-alpha)][wifimanagerlib]
