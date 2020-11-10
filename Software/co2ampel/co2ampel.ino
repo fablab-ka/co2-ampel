@@ -141,13 +141,14 @@ void startCalibration() {
   }
 }
 
+
 /**************************** setup() *************************************************/
 
 void setup()
 {
   Serial.begin(115200);
   setupLED();
-  
+
   // init IOs
   #ifdef GPIO_SWITCH
   pinMode(GPIO_SWITCH, INPUT);
@@ -161,6 +162,7 @@ void setup()
   Serial.println("Start CO2-Ampel");
 
   configStatus=configManager.readConfig("/config.json");
+  ledSetBrightnes(configManager.getUintValue("led_brightness", LED_BRIGHTNES)/100.0);
 
   // check if mqtt credentials are set
   if(configStatus==0) {

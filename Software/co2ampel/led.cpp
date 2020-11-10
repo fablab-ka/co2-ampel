@@ -1,8 +1,10 @@
 #include "led.h"
 
+double ledBrightnes;
+
 #ifdef PCBV2
-Adafruit_NeoPixel led1 = Adafruit_NeoPixel(NUMPIXELS, GPIO_GREEN, NEO_GRB + NEO_KHZ800);
-Adafruit_NeoPixel led2 = Adafruit_NeoPixel(NUMPIXELS, GPIO_RED, NEO_GRB + NEO_KHZ800);
+Adafruit_NeoPixel led1 = Adafruit_NeoPixel(NUMPIXELS, GPIO_GREEN, NEO_GRB + NEO_KHZ400);
+Adafruit_NeoPixel led2 = Adafruit_NeoPixel(NUMPIXELS, GPIO_RED, NEO_GRB + NEO_KHZ400);
 #endif
 /*
   CO2 Ampel - PCB v2.0 + v1.0
@@ -12,8 +14,10 @@ Adafruit_NeoPixel led2 = Adafruit_NeoPixel(NUMPIXELS, GPIO_RED, NEO_GRB + NEO_KH
   License: MIT
 */
 
+
+
 #ifdef PCBV1
-void setupLED() {
+void setupLED(ConfigManager &configManager) {
   pinMode(GPIO_GREEN, OUTPUT);
   pinMode(GPIO_YELLOW, OUTPUT);
   pinMode(GPIO_RED, OUTPUT);
@@ -47,7 +51,8 @@ void setupLED() {
 }
 
 void ledSetColor(Color color) {
-  double brightnes=LED_BRIGHTNES;
+
+  double brightnes=ledBrightnes;
   int switchState = digitalRead(GPIO_SWITCH);
   if(!switchState) brightnes=0;
   
@@ -90,4 +95,8 @@ void ledBlink(Color c1, Color c2, uint32_t time)
     delay(500);
   }
   ledSetColor(DARK);
+}
+
+void ledSetBrightnes(double brightness) { 
+  ledBrightnes = brightness; 
 }

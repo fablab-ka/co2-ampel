@@ -16,5 +16,6 @@
 void setupLED();
 void ledSetColor(Color color);
 void ledBlink(Color c1, Color c2, uint32_t time);
+void ledSetBrightnes(double brightness);
 
 #endif

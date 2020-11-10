@@ -9,6 +9,8 @@
 #ifndef CO2AMPEL_H
 #define CO2AMPEL_H
 
+#include <ESP8266httpUpdate.h>
+
 void scd30ForceRecalibration(uint16_t concentration);
 void setThresholdGreen(uint16_t th);
 void setConfig(String& jsonString);

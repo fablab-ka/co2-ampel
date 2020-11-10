@@ -73,7 +73,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE, GREEN2, YELLOW2, RED2};
 #define NUMPIXELS 14
 #define GPIO_GREEN 12
 #define GPIO_RED 0
-#define LED_BRIGHTNES 0.5;
+#define LED_BRIGHTNES 59 // % (0=dark, 100=full) overriden by led_brightness from config.json
 //SCD30
 #define GPIO_SCD30_RDY 13
 #define SCD30_TEMP_OFFSET 7.0

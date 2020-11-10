@@ -128,5 +128,25 @@ void mqttCallback(char* topic, byte* payload, unsigned int length) {
       WiFi.disconnect(true); // disconnect and delete credentials in flash
       while (1); // freeze and reboot due to watchdog 
     }
+  } else if (String(topic) == "config/"+mqttUsername+"/ota") {
+    updateFirmware(messageTemp.c_str());
   }
+}
+
+void updateFirmware(const char* url) {
+  Serial.println("Start Firmware Update");
+  t_httpUpdate_return ret = ESPhttpUpdate.update( wifiClient, url );
+  switch(ret) {
+    case HTTP_UPDATE_FAILED:
+      Serial.printf("HTTP_UPDATE_FAILD Error (%d): %s", ESPhttpUpdate.getLastError(), ESPhttpUpdate.getLastErrorString().c_str());
+      break;
+
+    case HTTP_UPDATE_NO_UPDATES:
+      Serial.println("HTTP_UPDATE_NO_UPDATES");
+      break;
+
+    case HTTP_UPDATE_OK:
+      Serial.println("HTTP_UPDATE_OK");
+      break;
+    }
 }
