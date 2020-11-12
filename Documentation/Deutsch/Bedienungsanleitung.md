@@ -120,16 +120,16 @@ Steigender CO2-Wert (Fenster geschlossen):
 |CO2-Gehalt|Farbe|
 |---|---|
 |<=&nbsp;1000&nbsp;ppm|GRÜN|
-|>&nbsp;1000&nbsp;ppm<p><=&nbsp;1500&nbsp;ppm|GELB|
-|>&nbsp;1500&nbsp;ppm|ROT|
+|>&nbsp;1000&nbsp;ppm<p><=&nbsp;2000&nbsp;ppm|GELB|
+|>&nbsp;2000&nbsp;ppm|ROT|
 
 Fallender CO2-Wert (während des Lüftens):
 
 |CO2-Gehalt|Farbe|
 |---|---|
 |<=&nbsp;800&nbsp;ppm|GRÜN|
-|>&nbsp;800&nbsp;ppm<p><=&nbsp;1200&nbsp;ppm|GELB|
-|>&nbsp;1200&nbsp;ppm|ROT|
+|>&nbsp;800&nbsp;ppm<p><=&nbsp;1500&nbsp;ppm|GELB|
+|>&nbsp;1500&nbsp;ppm|ROT|
 
 ## Entsorgung
 
