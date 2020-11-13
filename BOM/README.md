@@ -17,7 +17,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 |09|BMP280|1|IC2|BMP280| Bosch Sensortec|LGA-8 |[C83291][C83291] ||
 |10|SS24|1|D1|Diode 2A| MDD(Microdiode Electronics)|SMB(DO-214AA)|[C35501][C35501] ||
 |11|WS2813C|28|LED1-LED28| WS2813C|Worldsemi|SMD,5x5mm |[C194323][C194323] ||
-|12|SK-12E12-G5|1|SW1|Switch|Korean Hroparts Elec|Through Hole|[C136720][C136720]||
+|12||1|SW1|Switch||Through Hole|||
 |13|C46392|1|J1|USB-B| Jing Extension of the Electronic Co.|Through Hole|[C46392][C46392]||
 |14|YS-MBZ12085C05R42|1|SG1|Buzzer 5V|Fengming| 	Through Hole,12x8.5mm|[C409842][C409842]||
 |15|SCD30|1|U$1|CO2-Sensor| Sensirion AG|Through Hole|| [1649-1098-ND][1649-1098-ND] |
