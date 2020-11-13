@@ -29,9 +29,9 @@ Die [Bedienungsanleitung](Documentation/Deutsch/Bedienungsanleitung.md) der CO2-
 ## Aufbauanleitung (Bausatz)
 Die bebilderte [Aufbauanleitung](Documentation/Deutsch/Aufbauanleitung.md) erklärt Schritt für Schritt, wie die CO2-Ampel aus den Einzelkomponenten zusammengesetzt wird. Dies umfasst die folgenden Schritte:
 
-* Einlöten der fehlenden elektronischen Komponenten
+* Einstecken des Microcontrollers und des CO2-Sensors
+* Einsetzen der Platine
 * Zusammenstecken und Verschrauben des Geräts
-* Test und Fehlerbehebung
 
 ## Beschaffung bzw. Herstellung der Komponenten
 Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt einen Überblick, wie die Einzelkomponenten der CO2-Ampel basierend auf den Informationen in diesem GitHub-Repository hergestellt bzw. beschafft werden können. Die Anleitung umfasst die folgenden Abschnitte:
@@ -39,6 +39,7 @@ Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt
 * Beschaffung der Bauteile
 * Bestellung der Platine bei einem PCB-Haus
 * Bestückung der Platine mit den SMD-Komponenten
+* Einlöten der weiteren elektronischen Komponenten
 * Kompilieren und Hochladen der Software
 * Einrichtung des Webinterfaces für den Datenzugriff
 * 3D-Druck des Gehäuses
