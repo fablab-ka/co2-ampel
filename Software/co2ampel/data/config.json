@@ -17,6 +17,6 @@
   "th_yellow_high": 1500,
   "th_red": 2000,
   "selftest_buzzer": 0,
-  "led_brightness": 50,
+  "led_brightness": 128,
   "version": "1"
 }
