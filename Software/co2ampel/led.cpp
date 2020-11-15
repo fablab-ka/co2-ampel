@@ -1,11 +1,3 @@
-#include "led.h"
-
-double ledBrightnes;
-
-#ifdef PCBV2
-Adafruit_NeoPixel led1 = Adafruit_NeoPixel(NUMPIXELS, GPIO_GREEN, NEO_GRB + NEO_KHZ400);
-Adafruit_NeoPixel led2 = Adafruit_NeoPixel(NUMPIXELS, GPIO_RED, NEO_GRB + NEO_KHZ400);
-#endif
 /*
   CO2 Ampel - PCB v2.0 + v1.0
   By: FabLab Karlsruhe e.V., Nils Roßmann
@@ -15,9 +7,17 @@ Adafruit_NeoPixel led2 = Adafruit_NeoPixel(NUMPIXELS, GPIO_RED, NEO_GRB + NEO_KH
 */
 
 
+#include "led.h"
+
+uint8_t ledBrightnes;
+
+#ifdef PCBV2
+CRGB led1[NUMPIXELS1];
+CRGB led2[NUMPIXELS2];
+#endif
 
 #ifdef PCBV1
-void setupLED(ConfigManager &configManager) {
+void setupLED() {
   pinMode(GPIO_GREEN, OUTPUT);
   pinMode(GPIO_YELLOW, OUTPUT);
   pinMode(GPIO_RED, OUTPUT);
@@ -42,46 +42,61 @@ void ledSetColor(Color color) {
 
 #ifdef PCBV2
 void setupLED() {
-  led1.begin();
-  led1.show();
-  led1.show();
-  led2.begin();
-  led2.show();
-  led2.show();
+  // some boards have problems with the "WS2813" settings, so we use NEOPIXEL as they also support ws2813
+  FastLED.addLeds<NEOPIXEL, GPIO_LED1>(led1, NUMPIXELS1);
+  FastLED.addLeds<NEOPIXEL, GPIO_LED2>(led2, NUMPIXELS2);
+  FastLED.show();
+  FastLED.show();
 }
 
 void ledSetColor(Color color) {
 
-  double brightnes=ledBrightnes;
+  uint8_t brightnes=ledBrightnes;
   int switchState = digitalRead(GPIO_SWITCH);
   if(!switchState) brightnes=0;
-  
-  uint8_t red1=0;
-  uint8_t green1=0;
-  uint8_t blue1=0;
-  uint8_t red2=0;
-  uint8_t green2=0;
-  uint8_t blue2=0;
+
+  FastLED.setBrightness(brightnes);
+
   switch (color) {
-    case RED: red2=255*brightnes; break;
-    case YELLOW: red2=255*brightnes; green2=128*brightnes;  break;
-    case GREEN: green1=255*brightnes;  break;
-    case BLUE: blue2=255*brightnes; break;
-    case WHITE: red1=255*brightnes;green1=255*brightnes;blue1=255*brightnes;red2=255*brightnes;green2=255*brightnes;blue2=255*brightnes; break;
-    case RED2: red1=255*brightnes; red2=255*brightnes; break;
-    case YELLOW2: red1=255*brightnes; green1=128*brightnes; red2=255*brightnes; green2=128*brightnes;  break;
-    case GREEN2: green1=255*brightnes; green2=255*brightnes;  break;
-    case DARK: break;
+    case RED:
+      fill_solid(led1,NUMPIXELS1,CRGB::Black);
+      fill_solid(led2,NUMPIXELS2,CRGB::Red); 
+      break;
+    case YELLOW:
+      fill_solid(led1,NUMPIXELS1,CRGB::Black);
+      fill_solid(led2,NUMPIXELS2,CRGB::Yellow); 
+      break;
+    case GREEN: 
+      fill_solid(led1,NUMPIXELS1,CRGB::Green);
+      fill_solid(led2,NUMPIXELS2,CRGB::Black); 
+      break;
+    case BLUE:
+      fill_solid(led1,NUMPIXELS1,CRGB::Black);
+      fill_solid(led2,NUMPIXELS2,CRGB::Red);
+      break;
+    case WHITE: 
+      fill_solid(led1,NUMPIXELS1,CRGB::White);
+      fill_solid(led2,NUMPIXELS2,CRGB::White);
+      break;
+    case RED2:
+      fill_solid(led1,NUMPIXELS1,CRGB::Red);
+      fill_solid(led2,NUMPIXELS2,CRGB::Red); 
+      break;
+    case YELLOW2:
+      fill_solid(led1,NUMPIXELS1,CRGB::Yellow);
+      fill_solid(led2,NUMPIXELS2,CRGB::Yellow);
+      break;
+    case GREEN2:
+      fill_solid(led1,NUMPIXELS1,CRGB::Green);
+      fill_solid(led2,NUMPIXELS2,CRGB::Green);
+      break;
+    case DARK:
+      fill_solid(led1,NUMPIXELS1,CRGB::Black);
+      fill_solid(led2,NUMPIXELS2,CRGB::Black);
+      break;
   }
-  
-  for(int i=0;i<NUMPIXELS;i++){
-    led1.setPixelColor(i, led1.Color(red1,green1,blue1)); 
-  }
-  led1.show();  
-  for(int i=0;i<NUMPIXELS;i++){
-    led2.setPixelColor(i, led2.Color(red2,green2,blue2)); 
-  }
-  led2.show(); 
+
+  FastLED.show();
 }
 #endif
 
@@ -97,6 +112,6 @@ void ledBlink(Color c1, Color c2, uint32_t time)
   ledSetColor(DARK);
 }
 
-void ledSetBrightnes(double brightness) { 
+void ledSetBrightnes(uint8_t brightness) { 
   ledBrightnes = brightness; 
 }

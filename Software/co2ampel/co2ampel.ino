@@ -2,23 +2,25 @@
   CO2 Ampel - PCB v2.0 + v1.0
   By: FabLab Karlsruhe e.V., Nils Roßmann
   https://github.com/fablab-ka/co2-ampel/
-  Date: 13.10.2020
+  Date: 14.11.2020
   License: MIT
 */
 
 /* TODO
- *  set tresholds via mqtt
  *  adjust temperature offset due to new case
  *  check humidity and warn if lower than 40%
  *  create a class for mqtt, wifi etc.
- *  OTA Update?
  *  ntp+ssl cert check?
  */
 
 #include <Wire.h>
 #include "SparkFun_SCD30_Arduino_Library.h" // https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library (1.0.8)
 #include <Adafruit_BMP280.h> // https://github.com/adafruit/Adafruit_BMP280_Library (2.1.0)
+#if defined(ESP8266)
 #include <ESP8266WiFi.h>
+#elif defined(ESP32)
+#include <WiFi.h>
+#endif
 
 #include "ConfigManager.h"
 #include "config.h"
@@ -64,7 +66,7 @@ uint8_t configStatus;
 void selftest() 
 {
   ledSetColor(WHITE);
-  delay(2500);
+  delay(5000);
   bool ok=true;
   sensors_event_t pressure_event;
   uint16_t co2;
@@ -125,7 +127,7 @@ void setConfig(String& jsonString) {
 void startCalibration() {
   ledSetColor(YELLOW2);
   delay(600000); // wait 10min
-  bool ok = airSensor.setForcedRecalibrationFactor(400);
+  bool ok = airSensor.setForcedRecalibrationFactor(410);
   Serial.print("calibration status: ");
   Serial.println(ok);
   if (ok) {
@@ -162,7 +164,7 @@ void setup()
   Serial.println("Start CO2-Ampel");
 
   configStatus=configManager.readConfig("/config.json");
-  ledSetBrightnes(configManager.getUintValue("led_brightness", LED_BRIGHTNES)/100.0);
+  ledSetBrightnes(configManager.getUintValue("led_brightness", LED_BRIGHTNES));
 
   // check if mqtt credentials are set
   if(configStatus==0) {

@@ -6,6 +6,7 @@
   License: MIT
 */
 
+
 #include "buzzer.h"
 
 void beep(ConfigManager &configManager, int count, bool ignoreSwitch) {

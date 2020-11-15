@@ -9,13 +9,14 @@
 #ifndef LED_H
 #define LED_H
 
-#include <Adafruit_NeoPixel.h> //https://github.com/adafruit/Adafruit_NeoPixel (1.6.0)
+//#include <Adafruit_NeoPixel.h> //https://github.com/adafruit/Adafruit_NeoPixel (1.6.0)
+#include <FastLED.h>
 
 #include "config.h"
 
 void setupLED();
 void ledSetColor(Color color);
 void ledBlink(Color c1, Color c2, uint32_t time);
-void ledSetBrightnes(double brightness);
+void ledSetBrightnes(uint8_t brightness);
 
 #endif

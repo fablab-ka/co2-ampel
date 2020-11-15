@@ -10,7 +10,7 @@
 #define CONFIG_H
 
 /******************************* Version **************************************/
-#define VERSION 1
+#define VERSION 2
 
 /******************************* MQTT **************************************/
 
@@ -21,7 +21,7 @@
 #define MQTT_INTERVAL 4000 // overriden by mqtt_interval from config.json 
 
 
-/******************************* WIFI **************************************/
+/******************************* WIFI **********************SCD30_MEASUREMENT_INTERVAL****************/
 
 #define WIFI_ENABLED 1 // overriden by wifi_enabled from config.json 
 #define WIFI_AP_SSID "CO2Ampel" // overriden by wifi_ap_ssid from config.json 
@@ -70,10 +70,11 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE, GREEN2, YELLOW2, RED2};
 
 #ifdef PCBV2
 // LEDS
-#define NUMPIXELS 14
-#define GPIO_GREEN 12
-#define GPIO_RED 0
-#define LED_BRIGHTNES 59 // % (0=dark, 100=full) overriden by led_brightness from config.json
+#define NUMPIXELS1 14
+#define NUMPIXELS2 14
+#define GPIO_LED1 12
+#define GPIO_LED2 0
+#define LED_BRIGHTNES 128 // % (0=dark, 255=full) overriden by led_brightness from config.json
 //SCD30
 #define GPIO_SCD30_RDY 13
 #define SCD30_TEMP_OFFSET 7.0
