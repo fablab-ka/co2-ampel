@@ -64,7 +64,7 @@ void ledSetColor(Color color) {
       break;
     case YELLOW:
       fill_solid(led1,NUMPIXELS1,CRGB::Black);
-      fill_solid(led2,NUMPIXELS2,CRGB::Yellow); 
+      fill_solid(led2,NUMPIXELS2,CRGB(255,100,0)); 
       break;
     case GREEN: 
       fill_solid(led1,NUMPIXELS1,CRGB::Green);
@@ -83,8 +83,8 @@ void ledSetColor(Color color) {
       fill_solid(led2,NUMPIXELS2,CRGB::Red); 
       break;
     case YELLOW2:
-      fill_solid(led1,NUMPIXELS1,CRGB::Yellow);
-      fill_solid(led2,NUMPIXELS2,CRGB::Yellow);
+      fill_solid(led1,NUMPIXELS1,CRGB(255,100,0));
+      fill_solid(led2,NUMPIXELS2,CRGB(255,100,0));
       break;
     case GREEN2:
       fill_solid(led1,NUMPIXELS1,CRGB::Green);
