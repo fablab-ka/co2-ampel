@@ -216,9 +216,11 @@ void setup()
   airSensor.setTemperatureOffset(SCD30_TEMP_OFFSET);
 
   // Init bmp280
-  if (!bmp.begin(BMP280_ADDRESS_ALT, BMP280_CHIPID) && !bmp.begin(BMP280_ADDRESS, BMP280_CHIPID) ) {
-    Serial.println(F("Could not find a BMP280 sensor, check wiring!"));
-    bmpEnabled=0;
+  if (bmpEnabled) {
+    if (!bmp.begin(BMP280_ADDRESS_ALT, BMP280_CHIPID) && !bmp.begin(BMP280_ADDRESS, BMP280_CHIPID) ) {
+      Serial.println(F("Could not find a BMP280 sensor, check wiring!"));
+      bmpEnabled=0;
+    }
   }
   if (bmpEnabled) {
     // Default settings from datasheet. 
