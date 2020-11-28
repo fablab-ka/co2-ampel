@@ -69,19 +69,22 @@ void selftest()
   delay(5000);
   bool ok=true;
   sensors_event_t pressure_event;
-  uint16_t co2;
+  uint16_t co2=0;
   
   if((!bmpReady&&BMP_ENABLED) || !scd30Ready) ok=false;
   else {
-    while (!digitalRead(GPIO_SCD30_RDY) || ! airSensor.dataAvailable()) {
-      delay(500);
+    uint8_t i=0;
+    while (co2<SCD30_MIN_PPM && i++<10) { 
+      while (!digitalRead(GPIO_SCD30_RDY) || ! airSensor.dataAvailable()) {
+        delay(500);
+      }
+      co2 = airSensor.getCO2();
     }
-    co2 = airSensor.getCO2();
-    if (co2 < 300) {
+    if (co2 < SCD30_MIN_PPM) {
       Serial.print("co2 too low: ");
-      Serial.println(co2);
       ok=false;
-    }  
+    } else Serial.print("co2 ok: ");
+    Serial.println(co2);
     if (bmpReady) {
       bmp_pressure->getEvent(&pressure_event);  
       if (pressure_event.pressure < 700) {
@@ -101,7 +104,7 @@ void selftest()
     if(beepEnabled) beepFailure(configManager);
     if(!bmpReady) ledBlink(BLUE,RED,5000);
     else if(pressure_event.pressure < 700) ledBlink(BLUE,DARK,5000);
-    else if (co2 < 350) ledBlink(YELLOW,DARK,5000);
+    else if (co2 < SCD30_MIN_PPM) ledBlink(YELLOW,DARK,5000);
   }
 }
 
@@ -127,9 +130,52 @@ void setConfig(String& jsonString) {
 void startCalibration() {
   ledSetColor(YELLOW2);
   delay(600000); // wait 10min
-  bool ok = airSensor.setForcedRecalibrationFactor(410);
-  Serial.print("calibration status: ");
-  Serial.println(ok);
+  bool ok = false;
+  uint8_t calCount=0;
+  while (!ok && calCount<5) {
+    ok = airSensor.setForcedRecalibrationFactor(SCD30_CALIBRATION_PPM);
+    Serial.print("calibration status from sensor: ");
+    Serial.println(ok);
+    ledSetColor(BLUE);
+    uint8_t okcount=0;
+    uint16_t co2=0;
+    uint16_t co2last=0;
+    while (okcount<10) {  
+      while (!digitalRead(GPIO_SCD30_RDY) || ! airSensor.dataAvailable()) {
+        delay(500);
+      }
+      co2 = airSensor.getCO2();
+      uint16_t delta=abs(co2last-co2);
+      Serial.print("co2: ");
+      Serial.print(co2);
+      Serial.print(" delta: ");
+      Serial.println(delta);
+      if(delta<=10) okcount++;
+      else okcount=0;
+      co2last=co2;
+    }
+    ledSetColor(YELLOW2);
+    delay(60000);
+    
+    // check the next 20 values whether they are within the specification: +-(30ppm+3%MV)
+    uint16_t co2min=SCD30_CALIBRATION_PPM-(30+0.03*SCD30_CALIBRATION_PPM);
+    uint16_t co2max=SCD30_CALIBRATION_PPM+(30+0.03*SCD30_CALIBRATION_PPM);
+    for (uint8_t i=0; i < 20; i++) {
+      while (!digitalRead(GPIO_SCD30_RDY) || ! airSensor.dataAvailable()) {
+        delay(500);
+      }
+      co2 = airSensor.getCO2();
+      if(co2<co2min || co2>co2max) {
+        Serial.print("measured value outside specification: ");
+        Serial.println(co2);
+        ok=false;
+        break;
+      } else {
+        Serial.print("measured value ok: ");
+        Serial.println(co2);
+      }
+    }
+  }
   if (ok) {
     ledBlink(GREEN,DARK,2000);
     ledSetColor(GREEN2);
@@ -245,7 +291,7 @@ void loop()
 
 #ifdef GPIO_SWITCH
   // check recalibration switch
-  if(millis() < 30000 && abs(millis()-lastSwitchChange) > 500) {
+  if(millis() < 60000 && abs(millis()-lastSwitchChange) > 500) {
     int switchState = digitalRead(GPIO_SWITCH);
     if(switchState==1 && recalibrateSwitch==0) {
       recalibrateSwitch++;

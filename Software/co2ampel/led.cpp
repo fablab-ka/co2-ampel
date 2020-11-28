@@ -71,8 +71,8 @@ void ledSetColor(Color color) {
       fill_solid(led2,NUMPIXELS2,CRGB::Black); 
       break;
     case BLUE:
-      fill_solid(led1,NUMPIXELS1,CRGB::Blue);
-      fill_solid(led2,NUMPIXELS2,CRGB::Red);
+      fill_solid(led1,NUMPIXELS1,CRGB::Black);
+      fill_solid(led2,NUMPIXELS2,CRGB::Blue);
       break;
     case WHITE: 
       fill_solid(led1,NUMPIXELS1,CRGB::White);
