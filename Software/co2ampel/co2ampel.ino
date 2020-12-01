@@ -207,7 +207,8 @@ void setup()
   digitalWrite(GPIO_BUZZER,0);
 
   delay(500);
-  Serial.println("Start CO2-Ampel");
+  Serial.print("Start CO2-Ampel Version: ");
+  Serial.println(VERSION);
 
   configStatus=configManager.readConfig("/config.json");
   ledSetBrightnes(configManager.getUintValue("led_brightness", LED_BRIGHTNES));
