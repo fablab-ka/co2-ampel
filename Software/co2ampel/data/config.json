@@ -18,5 +18,6 @@
   "th_red": 2000,
   "selftest_buzzer": 0,
   "led_brightness": 128,
-  "version": "1"
+  "calibration_ppm": 450,
+  "version": "3"
 }
