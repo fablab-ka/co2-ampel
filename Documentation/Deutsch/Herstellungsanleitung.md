@@ -24,7 +24,7 @@
 * 2 Buchsenleisten, Polzahl 8 
 * 2 Stiftleisten, Polzahl 8
 * Schalter
-* USP-Buchse
+* USB-Buchse
 * Schraube
 * Typenschild
 
@@ -32,4 +32,4 @@
 
 * Setzt eine gewisse Erfahrung im Umgang mit Lötapparaten voraus
 * Nur Elektronik-Lötapparat mit feiner Spitze
-* Bleifreier Lötzinn empfohlen
+* Bleifreies Lötzinn empfohlen
