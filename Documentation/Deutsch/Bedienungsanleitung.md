@@ -82,14 +82,13 @@ Bei ansteigendem CO2-Wert ertönt bei jedem Wechsel der Farben ein **akustisches
 
 Nach erfolgreicher WLAN-Konfiguration wird die Ampel in regelmäßigen Abständen Messdaten an einen Server im Internet übertragen. Diese umfassen den CO2-Gehalt der Raumluft, die Temperatur und die Luftfeuchtigkeit. Die Daten erlauben Rückschlüsse auf die Anzahl der im Raum befindlichen Personen, auf die Häufigkeit des Lüftens und insbesondere auf die Einhaltung der Empfehlungen zum regelmäßigen Lüften.
 
-Der Server zur Protokollierung der Messwerte ist in der Software des Geräts hinterlegt. Mit der Übergabe der CO2-Ampel erhalten Sie ein Dokument, aus dem ersichtlich ist
+Der Server zur Protokollierung der Messwerte ist in der Software des Geräts hinterlegt. Wenn Sie die Ampel vom FabLab Karlsruhe e.V. erhalten haben, bedeutet dies:
 
-* Auf welchen Server die Messwerte übertragen werden.
-* Wie auf die Messwerte zugegriffen werden kann.
-* Wer Zugriff auf die Messwerte hat.
-* Zu welchen Zweck die Messwerte verwendet werden.
+* Die Daten werden auf den Server co2-ampel.fablab-karlsruhe.de übertragen. Es handelt sich dabei um einen virtuellen Server, den wir in Deutschland bei der Fa. Hetzner hosten. Betreiber ist der Verein FabLab Karlsruhe e.V.
+* Um Zugriff auf die Daten bzw. das Dashboard zu erhalten, schreiben Sie uns bitte eine E-Mail an kontakt@coronahilfe-karlsruhe.de 
+* Auf die Werte ihrer Ampeln haben nur von Ihnen genannte Personen Zugriff. Zusätzlich haben noch unsere Systemadministratoren Zugriff.
+* Die Daten werden zur Darstellung in dem von uns bereitgestellten Dashboard verarbeitet. Weiterhin werden sie in anonymisierter Form zur bedarfsgerechten Gestaltung, der Weiterentwicklung und der Optimierung des Dashboards durch unsere Systemadministratoren genutzt. Eine Weitergabe an Dritte erfolgt nicht.
 
-Falls Sie ein solches Dokument nicht erhalten, sollten Sie die oben beschriebene Konfiguration der WLAN-Verbindung **nicht** durchführen. Es werden dann keine Messdaten übertragen.
 
 ## Fehlerbehebung
 Falls die Ampel nicht leuchtet oder ein blinkender Farbcode angezeigt wird, liegt womöglich ein Fehler vor. Die folgende Tabelle beschreibt einige typische Fehlerursachen.
