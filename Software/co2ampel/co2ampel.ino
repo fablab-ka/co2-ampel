@@ -128,12 +128,15 @@ void setConfig(String& jsonString) {
 }
 
 void startCalibration() {
+
+  uint16_t calibration_ppm = configManager.getUintValue("calibration_ppm", SCD30_CALIBRATION_PPM);
+  
   ledSetColor(YELLOW2);
   delay(600000); // wait 10min
   bool ok = false;
   uint8_t calCount=0;
   while (!ok && calCount<5) {
-    ok = airSensor.setForcedRecalibrationFactor(SCD30_CALIBRATION_PPM);
+    ok = airSensor.setForcedRecalibrationFactor(calibration_ppm);
     Serial.print("calibration status from sensor: ");
     Serial.println(ok);
     ledSetColor(BLUE);
@@ -158,8 +161,8 @@ void startCalibration() {
     delay(60000);
     
     // check the next 20 values whether they are within the specification: +-(30ppm+3%MV)
-    uint16_t co2min=SCD30_CALIBRATION_PPM-(30+0.03*SCD30_CALIBRATION_PPM);
-    uint16_t co2max=SCD30_CALIBRATION_PPM+(30+0.03*SCD30_CALIBRATION_PPM);
+    uint16_t co2min=calibration_ppm-(30+0.03*calibration_ppm);
+    uint16_t co2max=calibration_ppm+(30+0.03*calibration_ppm);
     for (uint8_t i=0; i < 20; i++) {
       while (!digitalRead(GPIO_SCD30_RDY) || ! airSensor.dataAvailable()) {
         delay(500);

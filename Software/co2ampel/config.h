@@ -10,7 +10,7 @@
 #define CONFIG_H
 
 /******************************* Version **************************************/
-#define VERSION 4
+#define VERSION 5
 
 /******************************* MQTT **************************************/
 
@@ -38,7 +38,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE, GREEN2, YELLOW2, RED2};
 #define SCD30_CALIBRATION_MIN_RUNTIME 180 //seconds
 #define SCD30_MEASUREMENT_INTERVAL 2 // seconds (recalibrate, if you change this value)
 #define SCD30_MIN_PPM 350
-#define SCD30_CALIBRATION_PPM 450 
+#define SCD30_CALIBRATION_PPM 450 // overriden by calibration_ppm from config.json 
 
 /******************************* thresholds **************************************/
 #define TH_GREEN 800 //overriden by th_green from config.json
