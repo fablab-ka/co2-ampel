@@ -21,5 +21,7 @@ void loopWifi(ConfigManager &configManager);
 void setupWifi(ConfigManager &configManager);
 void startPortalCallback(WiFiManager*);
 void connectedCallback(const WiFiEventStationModeGotIP&);
+uint8_t isWifiConnected();
+
 
 #endif

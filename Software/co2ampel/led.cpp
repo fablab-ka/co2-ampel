@@ -8,6 +8,7 @@
 
 
 #include "led.h"
+#include "wifi.h"
 
 uint8_t ledBrightnes;
 
@@ -53,7 +54,7 @@ void ledSetColor(Color color) {
 
   uint8_t brightnes=ledBrightnes;
   int switchState = digitalRead(GPIO_SWITCH);
-  if(!switchState) brightnes=0;
+  if(!switchState && isWifiConnected()) brightnes=0;
 
   FastLED.setBrightness(brightnes);
 

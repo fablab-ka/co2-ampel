@@ -107,5 +107,8 @@ void connectedCallback(const WiFiEventStationModeGotIP& event) {
   wifiConnected=1;
   Serial.print("VERBUNDEN: ");
   Serial.println(event.ip);
+}
 
+uint8_t isWifiConnected() {
+  return wifiConnected;
 }
