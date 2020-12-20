@@ -16,6 +16,7 @@
 #include <Wire.h>
 #include "SparkFun_SCD30_Arduino_Library.h" // https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library (1.0.8)
 #include <Adafruit_BMP280.h> // https://github.com/adafruit/Adafruit_BMP280_Library (2.1.0)
+#include <Adafruit_BME280.h> //https://github.com/adafruit/Adafruit_BME280_Library
 #if defined(ESP8266)
 #include <ESP8266WiFi.h>
 #elif defined(ESP32)
@@ -28,6 +29,7 @@
 #include "wifi.h"
 #include "buzzer.h"
 #include "led.h"
+#include "bmx.h"
 #include "co2ampel.h"
 
 SCD30 airSensor;
@@ -39,21 +41,12 @@ uint16_t red_th;
 
 Color currentCO2Color=GREEN;
 
-
-Adafruit_BMP280 bmp; // use I2C interface
-Adafruit_Sensor *bmp_temp = bmp.getTemperatureSensor();
-Adafruit_Sensor *bmp_pressure = bmp.getPressureSensor();
-
-
-
 uint32_t mqttLastSend = 0;
 uint32_t mqttLastTry = 0;
 uint32_t scd30LastUpdate = 0;
-bool bmpEnabled = BMP_ENABLED;
 uint8_t recalibrateSwitch=0;
 uint32_t lastSwitchChange=0;
 
-bool bmpReady=false;
 bool scd30Ready=false;
 
 // ConfigManager
@@ -68,10 +61,11 @@ void selftest()
   ledSetColor(WHITE);
   delay(5000);
   bool ok=true;
-  sensors_event_t pressure_event;
+  sensors_event_t pressureEvent;
   uint16_t co2=0;
+  uint16_t bmxEnabled = configManager.getUintValue("bmx_enabled", BMX_ENABLED);
   
-  if((!bmpReady&&BMP_ENABLED) || !scd30Ready) ok=false;
+  if((!isBmxReady()&&bmxEnabled) || !scd30Ready) ok=false;
   else {
     uint8_t i=0;
     while (co2<SCD30_MIN_PPM && i++<10) { 
@@ -85,12 +79,13 @@ void selftest()
       ok=false;
     } else Serial.print("co2 ok: ");
     Serial.println(co2);
-    if (bmpReady) {
-      bmp_pressure->getEvent(&pressure_event);  
-      if (pressure_event.pressure < 700) {
+
+    if(isBmxReady()) {
+    bmxPressure->getEvent(&pressureEvent);  
+      if (pressureEvent.pressure < 700) {
         Serial.print("pressure too low ");
-        Serial.println(pressure_event.pressure);
-        ok=false;   
+        Serial.println(pressureEvent.pressure);
+        ok=false;
       }
     }
   }
@@ -102,8 +97,9 @@ void selftest()
   }
   else {
     if(beepEnabled) beepFailure(configManager);
-    if(!bmpReady) ledBlink(BLUE,RED,5000);
-    else if(pressure_event.pressure < 700) ledBlink(BLUE,DARK,5000);
+    
+    if( bmxEnabled && !isBmxReady() ) ledBlink(BLUE,RED,5000);
+    else if(pressureEvent.pressure < 700) ledBlink(BLUE,DARK,5000);
     else if (co2 < SCD30_MIN_PPM) ledBlink(YELLOW,DARK,5000);
   }
 }
@@ -266,20 +262,8 @@ void setup()
   airSensor.setTemperatureOffset(SCD30_TEMP_OFFSET);
 
   // Init bmp280
-  if (bmpEnabled) {
-    if (!bmp.begin(BMP280_ADDRESS_ALT, BMP280_CHIPID) && !bmp.begin(BMP280_ADDRESS, BMP280_CHIPID) ) {
-      Serial.println(F("Could not find a BMP280 sensor, check wiring!"));
-      bmpEnabled=0;
-    }
-  }
-  if (bmpEnabled) {
-    // Default settings from datasheet. 
-    bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,    // Operating Mode. 
-                  Adafruit_BMP280::SAMPLING_X1,     // Temp. oversampling
-                  Adafruit_BMP280::SAMPLING_X1,    // Pressure oversampling
-                  Adafruit_BMP280::FILTER_OFF,      // Filtering.
-                  Adafruit_BMP280::STANDBY_MS_4000); // Standby time.
-    bmpReady=true;
+  if (configManager.getUintValue("bmx_enabled", BMX_ENABLED)) {
+    bmxSetup();
   }
   if(configManager.getUintValue("selftest_enabled", SELFTEST_ENABLED)) selftest();
 }
@@ -346,9 +330,9 @@ void loop()
     sensors_event_t temp_event, pressure_event;
     double pressure = 0.0;
     double temp2 = 0.0;
-    if (bmpEnabled) {  
-      bmp_temp->getEvent(&temp_event);
-      bmp_pressure->getEvent(&pressure_event);
+    if (isBmxReady()) {  
+      bmxTemp->getEvent(&temp_event);
+      bmxPressure->getEvent(&pressure_event);
       temp2 = temp_event.temperature;  
       Serial.print(temp2);
       Serial.print(" ");
@@ -394,7 +378,7 @@ void loop()
       }
     }
 
-    if (bmpEnabled) {
+    if (isBmxReady()) {
       Serial.print("set pressure: ");
       Serial.println(pressure);
       airSensor.setAmbientPressure(pressure);

@@ -10,7 +10,7 @@
 #define CONFIG_H
 
 /******************************* Version **************************************/
-#define VERSION 6
+#define VERSION 7
 
 /******************************* MQTT **************************************/
 
@@ -85,8 +85,8 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE, GREEN2, YELLOW2, RED2};
 // BUZZER
 #define GPIO_BUZZER 14
 #define BUZZER_ENABLED 1 //overriden by buzzer_enabled from config.json
-// BME280
-#define BMP_ENABLED 1
+// BM(E/P)280
+#define BMX_ENABLED 1 //overriden by bmx_enabled from config.json
 // self test
 #define SELFTEST_ENABLED 1 //overriden by selftest_enabled from config.json 
 #define SELFTEST_BUZZER 0 //overriden by selftest_buzzer from config.json 
@@ -123,7 +123,7 @@ enum Color {GREEN, YELLOW, RED, BLUE, DARK, WHITE, GREEN2, YELLOW2, RED2};
 #define GPIO_BUZZER 2
 #define BUZZER_ENABLED 1 //overriden by buzzer_enabled from config.json
 // BME280
-#define BMP_ENABLED 0
+#define BMX_ENABLED 0 //overriden by bmx_enabled from config.json
 // self test
 #define SELFTEST_ENABLED 1 //overriden by selftest_enabled from config.json
 #define SELFTEST_BUZZER 1 //overriden by selftest_buzzer from config.json 
