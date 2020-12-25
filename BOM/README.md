@@ -14,7 +14,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 |06|0805W8F4701T5E|3|R1, R3, R11|4.7k|UNI-ROYAL|0805_R|[C17673][C17673]|| 
 |07a|BME280|1|IC1|BME280|Bosch Sensortec|LGA-8 |[C92489][C92489]||
 |07b|BMP280|1|IC1|BMP280|Bosch Sensortec|LGA-8 |[C83291][C83291]||
-|07c|12239814426720|1|JP1|GY-BMP280|AZ-Delivery|Through Hole|||
+|07c|12239814426720|1|JP1|[GY-BMP280][GY-BMP280]|AZ-Delivery|Through Hole|||
 |08|SN74AHCT125DR|1|IC2|SN74AHCT125DR|Texas Instruments|SOIC-14_150mil|[C155176][C155176]||
 |09|SS24|1|D1|Diode 2A| MDD(Microdiode Electronics)|SMB(DO-214AA)|[C35501][C35501]||
 |10|WS2813C|28|LED1-LED28| WS2813C|Worldsemi|SMD,5x5mm |[C194323][C194323]||
@@ -40,6 +40,7 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 [C17673]: https://lcsc.com/product-detail/Chip-Resistor-Surface-Mount_UNI-ROYAL-Uniroyal-Elec-0805W8F4701T5E_C17673.html "C17673"
 [C92489]: https://lcsc.com/product-detail/Humidity-Sensors_Bosch-Sensortec-BME280_C92489.html "C92489"
 [C83291]: https://lcsc.com/product-detail/Gas-Sensors_Bosch-Sensortec-BMP280_C83291.html "C83291"
+[GY-BMP280]: https://www.az-delivery.de/en/collections/alle-produkte/products/azdelivery-bmp280-barometrischer-sensor-luftdruck-modul-fur-arduino-und-raspberry-pi "GY-BMP280"
 [C155176]: https://lcsc.com/product-detail/Logic-Buffers-Drivers-Receivers-Transceivers_Texas-Instruments-SN74AHCT125DR_C155176.html "C155176"
 [C35501]: https://lcsc.com/product-detail/Schottky-Barrier-Diodes-SBD_MDD-Microdiode-Electronics-SS24_C35501.html "C35501"
 [C194323]: https://lcsc.com/product-detail/Light-Emitting-Diodes-LED_Worldsemi-WS2813C_C194323.html "C194323"
