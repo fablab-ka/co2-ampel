@@ -18,7 +18,6 @@ Falls die WLAN Reichweite des D1 mini nicht ausreicht, kann alternativ der D1 mi
 |08|SN74AHCT125DR|1|IC2|SN74AHCT125DR|Texas Instruments|SOIC-14_150mil|[C155176][C155176]||
 |09|SS24|1|D1|Diode 2A| MDD(Microdiode Electronics)|SMB(DO-214AA)|[C35501][C35501]||
 |10|WS2813C|28|LED1-LED28| WS2813C|Worldsemi|SMD,5x5mm |[C194323][C194323]||
-
 |11|SK-12D02VG4|1|SW1|Switch|SOFNG SK-12D02VG4|Through Hole|[C239529][C239529]|[A107673-ND][A107673-ND]|
 |12|C46392|1|J1|USB-B| Jing Extension of the Electronic Co.|Through Hole|[C46392][C46392]|[102-3999-ND][102-3999-ND]|
 |13|YS-MBZ12085C05R42|1|SG1|Buzzer 5V|Fengming| 	Through Hole,12x8.5mm|[C409842][C409842]|[433-1028-ND][433-1028-ND]|
