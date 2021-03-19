@@ -54,9 +54,12 @@ Prüft bitte bevor ihr beginnt, ob ihr alle benötigten Teile und Werkzeuge habt
 2. Setzt die 7pin Buchse in die Löthilfe ein (c)
 3. Setzt die 6pin Stiftleiste in die Löthilfe ein (d). **WICHTIG:** Die kurzen Beinchen schauen nach oben raus.
 4. Buzzer auf die Platine stecken (auf der Seite **ohne** LEDs). Falls der Buzzer beim Drehen der Platine abfällt, dann die Beinchen leicht zusammen drücken und dann nochmals einstecken. **WICHTIG:** Achtet hier auf die richtige Polarität. (+ auf dem Buzzer zu + auf der Platine).
+![Teil1 Bauteile eingesetzt](../images/loeten/teil1_eingesetzt.jpg)
 5. Platine vorsichtig auf die Löthilfe stecken. Evtl. etwas rütteln, so dass die Stiftleisten in die Löcher der Platine rutschen. Wenn alles passt, dann die Platine fest in die Löthilfe drücken, so dass die Ränder bündig sind. 
+![Teil1 alles vorbereitet zum Löten](../images/loeten/teil1_vorbereitet.jpg)
 6. Jetzt könnt ihr alle Pins anlöten. Achtet darauf, dass ihr den Lötkolben nur max 2-3 Sekunden an die Lötstelle haltet. 
 7. **Qualitätskontrolle:** Das ist der wichtigste Schritt und erspart euch später viel Zeit bei der Fehlersuche. Prüft nochmals alle Lötstellen und schaut nochmal, ob ihr wirklich **kein Bauteil oder Pin vergessen** habt. Die **Lötstellen** sollten **glatt und leicht konisch** sein. Wenn sie rau sind, habt ihr vermutlich eine kalte Lötstelle. Dann solltet ihr das Lötzinn nach einer kurzen Abkühlphase nochmals erhitzen. Prüft zur Sicherheit noch einmal, dass **keine Lötstellen miteinander verbunden** sind. Das kann später einen Kurzschluss verursachen und im schlimmsten Fall die Bauteile zerstören.
+![Teil1 Qualitätskontrolle](../images/loeten/teil1_qm.jpg)
 
 ## Teil II: USB-Buchse und Schalter
 
@@ -148,9 +151,9 @@ Auf der Platine sind die Positionen der Bauteile weiß markiert. Achtet bitte vo
 ## Schritt VI - CO2-Sensor
 
 ### Benötigte Bauteile
-2. geprüfte Platine aus Schritt V
+1. geprüfte Platine aus Schritt V
+2. Stiftleiste 7pin
 3. scd30 CO2-Sensor
-3. Stiftleiste 7pin
 
 ### Benötigtes Werkzeug
 * 3D-gedruckte Löthilfe für den scd30
@@ -166,10 +169,13 @@ Der Sensor ist das teuerste Bauteil und sehr empfindlich. Wenn ihr hier zu lange
 
 Der Sensor ist außerdem empfindlich gegen elektrostatische Aufladung. Ihr solltet daher bei diesem Schritt ein **Erdungsarmband tragen** und ihn nur am Rand anfassen.
 1. Stiftleiste in die Löthilfe stecken (kurze Beine schauen raus)
+![scd30 loethilfe 1](../images/loeten/teil6_loethilfe.jpg)
 2. Sensor einlegen (es gibt nur eine Position die passt). Vorsichtig andrücken.
+![scd30 loethilfe 2](../images/loeten/teil6_loethilfe2.jpg)
 3. Pins vorsichtig löten
 4. **Qualitätskontrolle:** Auch nach diesem Schritt bitte nochmal alle Lötstellen wie oben beschrieben prüfen. 
 5. Sensor auf die Platine stecken. Hier müsst ihr unbedingt darauf achten, dass der Sensor richtig sitzt und alle PINs im Header stecken. **Wenn ihr ihn nur um ein PIN versetzt einsteckt, wird er beim Einschalten sofort zerstört.**
+![scd30 richtig auf die Platine stecken](../images/loeten/teil6_scd30.jpg)
 
 ## Schritt VII - Test der Ampel
 
