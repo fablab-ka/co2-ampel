@@ -174,14 +174,14 @@ Der Sensor ist außerdem empfindlich gegen elektrostatische Aufladung. Ihr sollt
 ![scd30 loethilfe 2](../images/loeten/teil6_loethilfe2.jpg)
 3. Pins vorsichtig löten
 4. **Qualitätskontrolle:** Auch nach diesem Schritt bitte nochmal alle Lötstellen wie oben beschrieben prüfen. 
-5. Sensor auf die Platine stecken. Hier müsst ihr unbedingt darauf achten, dass der Sensor richtig sitzt und alle PINs im Header stecken. **Wenn ihr ihn nur um ein PIN versetzt einsteckt, wird er beim Einschalten sofort zerstört.**
+5. Sensor auf die Platine stecken. Hier müsst ihr unbedingt darauf achten, dass der Sensor richtig sitzt und alle Pins in der Buchse stecken. **Wenn ihr ihn nur um einen Pin versetzt einsteckt, wird er beim Einschalten sofort zerstört.**
 ![scd30 richtig auf die Platine stecken](../images/loeten/teil6_scd30.jpg)
 
 ## Schritt VII - Test der Ampel
 
 ### Benötigte Bauteile
-2. geprüfte Platine aus Schritt VI
-3. USB-Netzteil
+1. geprüfte Platine aus Schritt VI
+2. USB-Netzteil
 3. USB-Kabel (A-Stecker auf B-Stecker)
 
 ![Bauteile und Werkzeug Teil VII](../images/loeten/teil7_material.jpg)
@@ -191,7 +191,7 @@ Der Sensor ist außerdem empfindlich gegen elektrostatische Aufladung. Ihr sollt
 2. CO2-Ampel mit dem Kabel an das Netzteil anschließen
 3. Selbsttest abwarten. Wenn alles richtig gemacht wurde, leuchten zuerst alle LEDs kurz weiß und blinken dann grün. 
 4. CO2-Sensor leicht anpusten. Er sollte nach ein paar Sekunden auf gelb/rot springen und der Buzzer sollte zu hören sein. 
-5. Wenn der Selbsttest erfolgreich war und auch der buzzer funktioniert, könnt ihr die Ampel fertig zusammen bauen und dann direkt einsetzen.
+5. Wenn der Selbsttest erfolgreich war und auch der Buzzer funktioniert, könnt ihr die Ampel fertig zusammen bauen und dann direkt einsetzen.
 
 Wir hoffen es hat alles geklappt und ihr hattet Spaß beim Löten. Wenn es Probleme gibt oder ihr unsicher seid, dann meldet euch gerne bei uns.
 
