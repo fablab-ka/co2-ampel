@@ -23,7 +23,7 @@
 
 ![Teil IV - D1](../images/loeten/teil4_d1.jpg)
 
-3. Drückt den Mikrocontroller auf die Stiftleiste und lötet zunächst die 4 äußeren Pins. Auch hier ist es wieder wichtig, dass ihr die Lötspitze von außen zum Mikrocontroller führt und das Lötzinn von Innen.
+3. Drückt den Mikrocontroller auf die Stiftleiste und lötet zunächst die 4 äußeren Pins (a,b,c,d). Auch hier ist es wieder wichtig, dass ihr die Lötspitze von außen zum Mikrocontroller führt und das Lötzinn von Innen.
 
 ![Teil IV - Löten](../images/loeten/teil4_loeten.jpg)
 
