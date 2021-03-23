@@ -44,6 +44,8 @@ Die [Herstellungsanleitung](Documentation/Deutsch/Herstellungsanleitung.md) gibt
 * Einrichtung des Webinterfaces für den Datenzugriff
 * 3D-Druck des Gehäuses
 
+In der bebilderten [Loetanleitung](Documentation/Deutsch/Loetanleitung) sind alle wichtigen Schritte zum Löten der Komponenten beschrieben. Wir haben uns hier auf das Einlöten der Through Hole Komponenten beschränkt.
+
 ## Weiterentwicklung des Projekts
 Der gesamte Quellcode der CO2-Ampel V2 wurde in diesem  GitHub-Repository veröffentlicht. Er besteht aus den folgenden Komponenten:
 

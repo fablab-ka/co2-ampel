@@ -33,3 +33,5 @@
 * Setzt eine gewisse Erfahrung im Umgang mit Lötapparaten voraus
 * Nur Elektronik-Lötapparat mit feiner Spitze
 * Bleifreies Lötzinn empfohlen
+
+In der bebilderten [Loetanleitung](Documentation/Deutsch/Loetanleitung) sind alle wichtigen Schritte zum Löten der Komponenten beschrieben. Wir haben uns hier auf das Einlöten der Through Hole Komponenten beschränkt.
