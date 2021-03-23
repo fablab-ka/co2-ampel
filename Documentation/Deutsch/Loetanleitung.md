@@ -28,6 +28,7 @@ Prüft bitte bevor ihr beginnt, ob ihr alle benötigten Teile und Werkzeuge habt
 * Lötrauchabsaugung
 * Lötzinn (bleifrei 0.5-0.75mm Durchmesser)
 * Seitenscheider
+* Schutzbrille
 * Multimeter
 * Erdungsarmband
 * evtl. eine Entlötpumpe, falls doch mal ein Bauteil falsch eingelötet wurde

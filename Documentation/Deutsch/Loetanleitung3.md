@@ -21,7 +21,6 @@
 ![bmp280 Positionierung](../images/loeten/teil3_positionierung.jpg)
 
 2. Haltet die kleine Platine waagerecht und lötet den ersten Pin. Wenn das Lötzinn kalt ist, könnt ihr die Platine los lassen und nochmal prüfen, ob sie waagerecht sitzt.
-3. Kürzt mit einem Seitenschneider die Stiftleiste. Die Pins sollten 1-2mm raus stehen. Das vereinfacht eucht später das Löten. Wenn ihr keinen Seitenschneider habt, könnt ihr diesen Schritt aber auch überspringen.
-4. Lötet die restlichen Pins
-5. **Qualitätskontrolle:** Auch nach diesem Schritt bitte nochmal alle Lötstellen wie oben beschrieben prüfen. 
+3. Lötet die restlichen Pins
+4. **Qualitätskontrolle:** Auch nach diesem Schritt bitte nochmal alle Lötstellen wie oben beschrieben prüfen. 
 
